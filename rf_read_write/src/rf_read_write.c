@@ -44,9 +44,9 @@ DEFAULT SET TO 0x01000000
 #define RX_BUFFER_BASE		(MEM_BASE_ADDR + 0x00300000)
 #define RX_BUFFER_HIGH		(MEM_BASE_ADDR + 0x004FFFFF)
 
-#define MAX_PKT_LEN		0x100
+#define MAX_PKT_LEN		0x20
 
-#define TEST_START_VALUE	0x100
+#define TEST_START_VALUE	0x100  //Orignally 0xC
 
 #define NUMBER_OF_TRANSFERS	10
 #define POLL_TIMEOUT_COUNTER    1000000U
@@ -171,7 +171,7 @@ int simple_read_write(UINTPTR BaseAddress)
 	for (Index = 0; Index < MAX_PKT_LEN; Index ++) {
 		TxBufferPtr[Index] = Value;
 
-		Value = (Value + 1) & 0xFF;
+		// Value = (Value + 1) & 0xFF;
 	}
 
 	/* Flush the buffers before the DMA transfer, in case the Data Cache
@@ -258,13 +258,16 @@ static int checkData(void)
 	for (Index = 0; Index < MAX_PKT_LEN; Index++) {
         //xil_printf("Received :%d. \r\n", RxPacket[Index]);
 		if (RxPacket[Index] != Value) {
-			xil_printf("Data error %d: sent %d, received %d\r\n",
+			xil_printf("Data error %d: sent %x, received %x\r\n",
 				   Index, (unsigned int)Value,
 				   (unsigned int)RxPacket[Index]);
-
+            
+            xil_printf("Data error %d: sent %d, received %d\r\n",
+				   Index, (unsigned int)Value,
+				   (unsigned int)RxPacket[Index]);
 			//return XST_FAILURE;
 		}
-		Value = (Value + 1) & 0xFF;
+		// Value = (Value + 1) & 0xFF;
 	}
 
 	return XST_SUCCESS;
