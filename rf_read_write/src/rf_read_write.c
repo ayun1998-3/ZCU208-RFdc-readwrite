@@ -44,7 +44,7 @@ DEFAULT SET TO 0x01000000
 #define RX_BUFFER_BASE		(MEM_BASE_ADDR + 0x00300000)
 #define RX_BUFFER_HIGH		(MEM_BASE_ADDR + 0x004FFFFF)
 
-#define MAX_PKT_LEN		0x20
+#define MAX_PKT_LEN		0xa0
 
 #define TEST_START_VALUE	0x100  //Orignally 0xC
 
@@ -183,11 +183,10 @@ int simple_read_write(UINTPTR BaseAddress)
 	for (Index = 0; Index < Tries; Index ++) {
         xil_printf("Iteration, %d\r\n", Index);
 
-		Status = XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR) RxBufferPtr,
-						MAX_PKT_LEN, XAXIDMA_DEVICE_TO_DMA);
-
         xil_printf("Check 1\r\n");
 
+		Status = XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR) TxBufferPtr,
+						MAX_PKT_LEN, XAXIDMA_DMA_TO_DEVICE);
 
 		if (Status != XST_SUCCESS) {
 			return XST_FAILURE;
@@ -195,9 +194,8 @@ int simple_read_write(UINTPTR BaseAddress)
 
         xil_printf("Check 2\r\n");
 
-
-		Status = XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR) TxBufferPtr,
-						MAX_PKT_LEN, XAXIDMA_DMA_TO_DEVICE);
+        Status = XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR) RxBufferPtr,
+						MAX_PKT_LEN, XAXIDMA_DEVICE_TO_DMA);
 
 		if (Status != XST_SUCCESS) {
 			return XST_FAILURE;

@@ -4145,7 +4145,7 @@
                 compatible = "simple-bus";
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
-                firmware-name = "rfdata_rw_hardware.bit.bin";
+                firmware-name = "dummy_adc.bit.bin";
                 phandle = <0x106>;
 
                 axi_dma_0: axi_dma@a0000000 {
@@ -4226,13 +4226,14 @@
 
                 usp_rf_data_converter_0: usp_rf_data_converter@a0040000 {
                         xlnx,adc-tdd-rts21 = <0x0>;
-                        xlnx,adc3-fabric-freq = <0x0>;
+                        xlnx,adc3-fabric-freq = <0xfa>;
                         xlnx,adc-dither32;
                         xlnx,dac2-clock-source-mx = <0x6>;
                         xlnx,adc-tdd-rts22 = <0x0>;
                         xlnx,adc-dither33;
                         xlnx,mdac-refclk-freq = <0x1900>;
                         xlnx,adc-tdd-rts23 = <0x0>;
+                        xlnx,adc-slice31-enable;
                         xlnx,adc-nyquist30 = <0x0>;
                         xlnx,adc-nyquist31 = <0x0>;
                         xlnx,dac3-refclk-div = <0x1>;
@@ -4241,6 +4242,7 @@
                         xlnx,adc-nyquist33 = <0x0>;
                         reg = <0x0 0xa0040000 0x0 0x40000>;
                         xlnx,adc-tdd-rts30 = <0x0>;
+                        xlnx,adc-slice10-enable;
                         xlnx,adc2-slices = <0x2>;
                         xlnx,adc-tdd-rts31 = <0x0>;
                         xlnx,adc2-fs-max = <0x5>;
@@ -4254,32 +4256,33 @@
                         xlnx,dac-coarse-mixer-freq00 = <0x3>;
                         xlnx,dac-coarse-mixer-freq01 = <0x0>;
                         xlnx,adc0-slices = <0x2>;
-                        xlnx,dac-coarse-mixer-freq02 = <0x0>;
+                        xlnx,dac-coarse-mixer-freq02 = <0x3>;
                         xlnx,dac0-sampling-rate = <0x61a800>;
                         xlnx,adc0-fs-max = <0x5>;
                         xlnx,adc2-refclk-freq = <0x7d0>;
                         xlnx,dac-coarse-mixer-freq03 = <0x0>;
                         xlnx,dac2-outclk-freq = <0x32>;
-                        xlnx,adc30-dig-port = <0x0>;
+                        xlnx,adc30-dig-port = <0x1>;
                         xlnx,adc22-dig-port = <0x0>;
-                        xlnx,dac-coarse-mixer-freq10 = <0x0>;
-                        xlnx,dac3-vco = <0x2134>;
+                        xlnx,dac-coarse-mixer-freq10 = <0x3>;
+                        xlnx,dac3-vco = <0x3200>;
                         xlnx,dac-coarse-mixer-freq11 = <0x0>;
                         xlnx,name = "usp_rf_data_converter_0";
-                        xlnx,adc2-fabric-freq = <0x0>;
+                        xlnx,adc2-fabric-freq = <0xfa>;
+                        xlnx,dac-slice10-enable;
                         xlnx,dac-coarse-mixer-freq12 = <0x0>;
                         xlnx,dac-coarse-mixer-freq13 = <0x0>;
                         xlnx,adc-data-width00 = <0x8>;
                         xlnx,adc-data-width01 = <0x8>;
-                        xlnx,adc2-enable = <0x0>;
+                        xlnx,adc2-enable = <0x1>;
                         xlnx,adc-data-width02 = <0x8>;
                         xlnx,adc-data-width03 = <0x8>;
                         xlnx,adc0-obs-fabric-freq = <0x0>;
-                        xlnx,dac-coarse-mixer-freq20 = <0x0>;
+                        xlnx,dac-coarse-mixer-freq20 = <0x3>;
                         xlnx,dac-coarse-mixer-freq21 = <0x0>;
                         xlnx,adc2-obs-fabric-freq = <0x0>;
                         xlnx,dac-coarse-mixer-freq22 = <0x0>;
-                        xlnx,dac3-outdiv = <0x1>;
+                        xlnx,dac3-outdiv = <0x2>;
                         xlnx,adc1-band = <0x0>;
                         xlnx,adc3-fbdiv = <0xa>;
                         xlnx,madc-refclk-freq = <0x7d0>;
@@ -4288,13 +4291,13 @@
                         xlnx,dac2-band = <0x0>;
                         xlnx,adc-data-width10 = <0x8>;
                         xlnx,adc-data-width11 = <0x8>;
-                        clock-names = "m0_axis_aclk", "s0_axis_aclk", "s_axi_aclk";
+                        clock-names = "m0_axis_aclk", "m1_axis_aclk", "m2_axis_aclk", "m3_axis_aclk", "s0_axis_aclk", "s1_axis_aclk", "s2_axis_aclk", "s3_axis_aclk", "s_axi_aclk";
                         xlnx,adc3-refclk-div = <0x1>;
                         xlnx,adc-data-width12 = <0x8>;
                         xlnx,adc-data-width13 = <0x8>;
                         xlnx,madc-decimation-mode00 = <0x0>;
                         xlnx,madc-decimation-mode01 = <0x0>;
-                        xlnx,dac-coarse-mixer-freq30 = <0x0>;
+                        xlnx,dac-coarse-mixer-freq30 = <0x3>;
                         xlnx,adc1-sampling-rate = <0x2>;
                         xlnx,madc-decimation-mode02 = <0x0>;
                         xlnx,dac-coarse-mixer-freq31 = <0x0>;
@@ -4314,7 +4317,7 @@
                         xlnx,adc-data-width22 = <0x8>;
                         xlnx,production-simulation = <0x0>;
                         xlnx,mdac-nco-phase01 = <0x0>;
-                        xlnx,dac1-outdiv = <0x1>;
+                        xlnx,dac1-outdiv = <0x2>;
                         xlnx,adc-data-width23 = <0x8>;
                         xlnx,mdac-nco-phase02 = <0x0>;
                         xlnx,adc2-fbdiv = <0xa>;
@@ -4324,7 +4327,7 @@
                         xlnx,use-bram = <0x1>;
                         xlnx,mdac-data-type01 = <0x0>;
                         xlnx,mdac-data-type02 = <0x0>;
-                        xlnx,dac0-vco = <0x2134>;
+                        xlnx,dac0-vco = <0x3200>;
                         xlnx,mdac-link-coupling = <0x0>;
                         xlnx,mdac-data-type03 = <0x0>;
                         xlnx,adc-obs-data-width10 = <0x8>;
@@ -4333,7 +4336,7 @@
                         xlnx,adc-coarse-mixer-freq00 = <0x3>;
                         xlnx,adc-data-width30 = <0x8>;
                         xlnx,adc-obs-data-width12 = <0x8>;
-                        xlnx,adc1-fabric-freq = <0x0>;
+                        xlnx,adc1-fabric-freq = <0xfa>;
                         xlnx,adc-coarse-mixer-freq01 = <0x3>;
                         xlnx,adc-data-width31 = <0x8>;
                         xlnx,adc-obs-data-width13 = <0x8>;
@@ -4348,7 +4351,7 @@
                         xlnx,dac-nyquist01 = <0x0>;
                         xlnx,dac-nco-phase00 = <0x0>;
                         xlnx,dac-mode01 = <0x0>;
-                        xlnx,dac3-fbdiv = <0xa>;
+                        xlnx,dac3-fbdiv = <0x20>;
                         xlnx,adc-calopt-mode01 = <0x1>;
                         xlnx,dac-nyquist02 = <0x0>;
                         xlnx,dac-nco-phase01 = <0x0>;
@@ -4372,13 +4375,13 @@
                         xlnx,dac-data-type02 = <0x0>;
                         xlnx,adc-obs-data-width21 = <0x8>;
                         xlnx,adc-nco-freq00 = <0x0>;
-                        xlnx,adc-coarse-mixer-freq10 = <0x0>;
+                        xlnx,adc-coarse-mixer-freq10 = <0x3>;
                         xlnx,dac-tdd-rts02 = <0x0>;
                         xlnx,dac-data-type03 = <0x0>;
                         xlnx,adc-obs-data-width22 = <0x8>;
                         xlnx,adc-nco-freq01 = <0x0>;
                         xlnx,adc1-fbdiv = <0xa>;
-                        xlnx,adc-coarse-mixer-freq11 = <0x0>;
+                        xlnx,adc-coarse-mixer-freq11 = <0x3>;
                         xlnx,dac-tdd-rts03 = <0x0>;
                         xlnx,dac1-sampling-rate = <0x61a800>;
                         xlnx,adc-obs-data-width23 = <0x8>;
@@ -4387,10 +4390,11 @@
                         xlnx,dac-nyquist10 = <0x0>;
                         xlnx,dac-mode10 = <0x0>;
                         xlnx,dac1-vop = <0x14>;
+                        xlnx,adc-slice20-enable;
                         xlnx,adc-nco-freq03 = <0x0>;
                         xlnx,adc-calopt-mode10 = <0x1>;
                         xlnx,adc-coarse-mixer-freq13 = <0x0>;
-                        param-list = <0x0 0x4a0 0x0 0x1000000 0x0 0x0 0x1000000 0x1000000 0x2000000 0x1000000 0x1000000 0x0 0x9a999999 0x99991940 0x0 0xb940 0x0 0x7940 0xa000000 0x1000000 0x1000000 0x0 0x0 0x1c40 0x2000000 0x0 0x1000000 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x10000000 0x1000000 0x0 0x0 0x1000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x0 0x9a999999 0x99991940 0x0 0xb940 0x0 0x0 0xa000000 0x1000000 0x1000000 0x0 0x0 0x2440 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x0 0x9a999999 0x99991940 0x0 0xb940 0x0 0x0 0xa000000 0x1000000 0x1000000 0x0 0x0 0x2440 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x0 0x9a999999 0x99991940 0x0 0xb940 0x0 0x0 0xa000000 0x1000000 0x1000000 0x0 0x0 0x2440 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x1000000 0x0 0x0 0x40 0x0 0x409f40 0x0 0x406f40 0xa000000 0x1000000 0x1000000 0x0 0x0 0x1440 0x2000000 0x1000000 0x2000000 0x1000000 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x8000000 0x1000000 0x0 0x1000000 0x0 0x0 0x0 0x8000000 0x1000000 0x0 0x1000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x0 0x0 0x40 0x0 0x409f40 0x0 0x0 0xa000000 0x1000000 0x1000000 0x0 0x0 0x1440 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x0 0x0 0x40 0x0 0x409f40 0x0 0x0 0xa000000 0x1000000 0x1000000 0x0 0x0 0x1440 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x0 0x0 0x40 0x0 0x409f40 0x0 0x0 0xa000000 0x1000000 0x1000000 0x0 0x0 0x1440 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0>;
+                        param-list = <0x0 0x4a0 0x0 0x1000000 0x0 0x0 0x1000000 0x1000000 0x2000000 0x1000000 0x1000000 0x1000000 0x9a999999 0x99991940 0x0 0x7940 0x0 0x7940 0x20000000 0x2000000 0x1000000 0x0 0x0 0x1c40 0x2000000 0x0 0x1000000 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x1000000 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x10000000 0x1000000 0x0 0x0 0x1000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x1000000 0x0 0x0 0x1000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x1000000 0x1000000 0x9a999999 0x99991940 0x0 0x7940 0x0 0x7940 0x20000000 0x2000000 0x1000000 0x0 0x0 0x1c40 0x2000000 0x0 0x1000000 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x10000000 0x1000000 0x0 0x0 0x1000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x1000000 0x1000000 0x9a999999 0x99991940 0x0 0x7940 0x0 0x7940 0x20000000 0x2000000 0x1000000 0x0 0x0 0x1c40 0x2000000 0x0 0x1000000 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x10000000 0x1000000 0x0 0x0 0x1000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x1000000 0x1000000 0x9a999999 0x99991940 0x0 0x7940 0x0 0x7940 0x20000000 0x2000000 0x1000000 0x0 0x0 0x1c40 0x2000000 0x0 0x1000000 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x0 0x2000000 0x0 0x0 0x10000000 0x1000000 0x0 0x0 0x1000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x0 0x10000000 0x0 0x0 0x0 0x3000000 0x0 0x0 0x1000000 0x0 0x0 0x40 0x0 0x409f40 0x0 0x406f40 0xa000000 0x1000000 0x1000000 0x0 0x0 0x1440 0x2000000 0x1000000 0x2000000 0x1000000 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x8000000 0x1000000 0x0 0x1000000 0x0 0x0 0x0 0x8000000 0x1000000 0x0 0x1000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x1000000 0x0 0x0 0x40 0x0 0x409f40 0x0 0x406f40 0xa000000 0x1000000 0x1000000 0x0 0x0 0x1440 0x2000000 0x1000000 0x2000000 0x1000000 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x8000000 0x1000000 0x0 0x1000000 0x0 0x0 0x0 0x8000000 0x1000000 0x0 0x1000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x1000000 0x0 0x0 0x40 0x0 0x409f40 0x0 0x406f40 0xa000000 0x1000000 0x1000000 0x0 0x0 0x1440 0x2000000 0x1000000 0x2000000 0x1000000 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x8000000 0x1000000 0x0 0x1000000 0x0 0x0 0x0 0x8000000 0x1000000 0x0 0x1000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x1000000 0x0 0x0 0x40 0x0 0x409f40 0x0 0x406f40 0xa000000 0x1000000 0x1000000 0x0 0x0 0x1440 0x2000000 0x1000000 0x2000000 0x1000000 0x2000000 0x0 0x2000000 0x0 0x2000000 0x0 0x8000000 0x1000000 0x0 0x1000000 0x0 0x0 0x0 0x8000000 0x1000000 0x0 0x1000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0 0x0 0x8000000 0x0 0x0 0x3000000 0x0 0x0>;
                         xlnx,mdac-coarse-mixer-freq00 = <0x0>;
                         xlnx,dac-nyquist11 = <0x0>;
                         xlnx,dac-nco-phase10 = <0x0>;
@@ -4425,15 +4429,15 @@
                         xlnx,dac-data-type12 = <0x0>;
                         xlnx,adc-obs-data-width31 = <0x8>;
                         xlnx,adc-nco-freq10 = <0x0>;
-                        xlnx,adc-coarse-mixer-freq20 = <0x0>;
+                        xlnx,adc-coarse-mixer-freq20 = <0x3>;
                         xlnx,madc-nyquist03 = <0x0>;
                         xlnx,madc-mixer-mode01 = <0x2>;
                         xlnx,dac-tdd-rts12 = <0x0>;
                         xlnx,dac-data-type13 = <0x0>;
-                        xlnx,dac2-fbdiv = <0xa>;
+                        xlnx,dac2-fbdiv = <0x20>;
                         xlnx,adc-obs-data-width32 = <0x8>;
                         xlnx,adc-nco-freq11 = <0x0>;
-                        xlnx,adc-coarse-mixer-freq21 = <0x0>;
+                        xlnx,adc-coarse-mixer-freq21 = <0x3>;
                         xlnx,madc-mixer-mode02 = <0x2>;
                         xlnx,dac-tdd-rts13 = <0x0>;
                         xlnx,adc-obs-data-width33 = <0x8>;
@@ -4480,16 +4484,16 @@
                         xlnx,dac-data-type22 = <0x0>;
                         xlnx,dac0-outclk-freq = <0x32>;
                         xlnx,adc-nco-freq20 = <0x0>;
-                        xlnx,adc-coarse-mixer-freq30 = <0x0>;
+                        xlnx,adc-coarse-mixer-freq30 = <0x3>;
                         xlnx,mdac-data-width02 = <0x10>;
                         xlnx,dac-tdd-rts22 = <0x0>;
                         xlnx,dac-data-type23 = <0x0>;
                         xlnx,dac3-slices = <0x2>;
                         xlnx,adc-nco-freq21 = <0x0>;
-                        xlnx,adc-coarse-mixer-freq31 = <0x0>;
+                        xlnx,adc-coarse-mixer-freq31 = <0x3>;
                         xlnx,mdac-data-width03 = <0x10>;
                         xlnx,dac-tdd-rts23 = <0x0>;
-                        xlnx,dac3-fs-max = <0xa>;
+                        xlnx,dac3-fs-max = <0x7>;
                         xlnx,adc-nco-freq22 = <0x0>;
                         xlnx,adc-coarse-mixer-freq32 = <0x0>;
                         xlnx,dac-nyquist30 = <0x0>;
@@ -4522,7 +4526,7 @@
                         xlnx,dac-mixer-type00 = <0x1>;
                         xlnx,dac-mixer-mode23 = <0x2>;
                         xlnx,dac-data-type30 = <0x0>;
-                        xlnx,dac1-fbdiv = <0xa>;
+                        xlnx,dac1-fbdiv = <0x20>;
                         xlnx,adc1-outdiv = <0x1>;
                         xlnx,madc-nco-phase02 = <0x0>;
                         xlnx,madc-dither00;
@@ -4530,14 +4534,15 @@
                         xlnx,dac-nco-freq02 = <0x0>;
                         xlnx,dac-mixer-type01 = <0x3>;
                         xlnx,dac-data-type31 = <0x0>;
-                        xlnx,dac0-clock-dist = <0x0>;
+                        xlnx,dac0-clock-dist = <0x1>;
                         xlnx,adc3-clock-source = <0x3>;
                         xlnx,madc-nco-phase03 = <0x0>;
                         xlnx,madc-dither01;
                         xlnx,madc-data-type00 = <0x0>;
                         xlnx,dac-tdd-rts31 = <0x0>;
+                        xlnx,dac-slice20-enable;
                         xlnx,dac-nco-freq03 = <0x0>;
-                        xlnx,dac-mixer-type02 = <0x3>;
+                        xlnx,dac-mixer-type02 = <0x1>;
                         xlnx,dac-data-type32 = <0x0>;
                         xlnx,adc-nco-freq30 = <0x0>;
                         xlnx,adc2-sampling-rate = <0x2>;
@@ -4576,9 +4581,9 @@
                         xlnx,adc0-clock-source-mx = <0x0>;
                         xlnx,mdac-decoder-mode00 = <0x0>;
                         xlnx,dac-nco-freq11 = <0x0>;
-                        xlnx,dac-mixer-type10 = <0x3>;
+                        xlnx,dac-mixer-type10 = <0x1>;
                         xlnx,dac-mixer-mode33 = <0x2>;
-                        xlnx,dac1-fs-max = <0xa>;
+                        xlnx,dac1-fs-max = <0x7>;
                         xlnx,mdac-decoder-mode01 = <0x0>;
                         xlnx,dac-nco-freq12 = <0x0>;
                         xlnx,dac-mixer-type11 = <0x3>;
@@ -4597,13 +4602,13 @@
                         xlnx,adc-data-type00 = <0x0>;
                         xlnx,mdac-outclk-freq = <0x32>;
                         xlnx,adc-data-type01 = <0x0>;
-                        xlnx,dac0-fbdiv = <0xa>;
+                        xlnx,dac0-fbdiv = <0x20>;
                         xlnx,adc-data-type02 = <0x0>;
                         xlnx,adc-data-type03 = <0x0>;
                         xlnx,dac-nco-freq20 = <0x0>;
                         xlnx,adc0-decimation = <0x1>;
                         xlnx,dac-nco-freq21 = <0x0>;
-                        xlnx,dac-mixer-type20 = <0x3>;
+                        xlnx,dac-mixer-type20 = <0x1>;
                         xlnx,madc-coarse-mixer-freq00 = <0x0>;
                         xlnx,dac-nco-freq22 = <0x0>;
                         xlnx,dac-mixer-type21 = <0x3>;
@@ -4614,10 +4619,10 @@
                         xlnx,adc-nco-phase11 = <0x0>;
                         xlnx,madc-coarse-mixer-freq02 = <0x0>;
                         xlnx,dac-mixer-type23 = <0x3>;
-                        xlnx,dac1-interpolation = <0x0>;
+                        xlnx,dac1-interpolation = <0x1>;
                         xlnx,adc-nco-phase12 = <0x0>;
                         xlnx,madc-coarse-mixer-freq03 = <0x0>;
-                        xlnx,dac3-enable = <0x0>;
+                        xlnx,dac3-enable = <0x1>;
                         xlnx,adc-nco-phase13 = <0x0>;
                         xlnx,adc-data-type10 = <0x0>;
                         xlnx,adc-data-type11 = <0x0>;
@@ -4630,7 +4635,7 @@
                         xlnx,dac2-sampling-rate = <0x61a800>;
                         xlnx,dac1-clock-dist = <0x0>;
                         xlnx,dac-nco-freq31 = <0x0>;
-                        xlnx,dac-mixer-type30 = <0x3>;
+                        xlnx,dac-mixer-type30 = <0x1>;
                         xlnx,dac-nco-freq32 = <0x0>;
                         xlnx,dac-mixer-type31 = <0x3>;
                         xlnx,adc-nco-phase20 = <0x0>;
@@ -4640,7 +4645,7 @@
                         xlnx,adc-nco-phase21 = <0x0>;
                         xlnx,mdac-vop = <0x14>;
                         xlnx,dac-mixer-type33 = <0x3>;
-                        xlnx,dac2-vco = <0x2134>;
+                        xlnx,dac2-vco = <0x3200>;
                         xlnx,adc-nco-phase22 = <0x0>;
                         xlnx,adc-nco-phase23 = <0x0>;
                         xlnx,adc-data-type20 = <0x0>;
@@ -4651,78 +4656,81 @@
                         xlnx,adc0-band = <0x0>;
                         xlnx,adc-data-type22 = <0x0>;
                         xlnx,dac1-band = <0x0>;
+                        xlnx,adc-slice11-enable;
                         xlnx,adc3-slices = <0x2>;
                         xlnx,adc-data-type23 = <0x0>;
                         xlnx,dac3-clock-source-mx = <0x7>;
                         xlnx,adc2-outclk-freq = <0xee6b28>;
                         xlnx,adc3-fs-max = <0x5>;
-                        xlnx,dac1-enable = <0x0>;
+                        xlnx,dac1-enable = <0x1>;
                         xlnx,adc-nco-phase30 = <0x0>;
                         xlnx,dac-interpolation-mode00 = <0x1>;
                         xlnx,adc-nco-phase31 = <0x0>;
                         xlnx,dac-interpolation-mode01 = <0x0>;
                         xlnx,adc-nco-phase32 = <0x0>;
                         xlnx,adc3-vco = <0x2134>;
-                        xlnx,dac-interpolation-mode02 = <0x0>;
+                        xlnx,dac-interpolation-mode02 = <0x1>;
                         xlnx,adc-nco-phase33 = <0x0>;
                         xlnx,adc-data-type30 = <0x0>;
                         xlnx,dac-interpolation-mode03 = <0x0>;
                         xlnx,adc0-clock-dist = <0x0>;
                         xlnx,adc-data-type31 = <0x0>;
-                        xlnx,adc1-decimation = <0x0>;
+                        xlnx,adc1-decimation = <0x1>;
                         xlnx,adc-data-type32 = <0x0>;
+                        xlnx,adc-slice30-enable;
                         xlnx,adc-data-type33 = <0x0>;
                         xlnx,adc-decimation-mode00 = <0x1>;
                         xlnx,dac3-vop = <0x14>;
-                        xlnx,adc20-dig-port = <0x0>;
+                        xlnx,adc20-dig-port = <0x1>;
                         xlnx,adc-decimation-mode01 = <0x1>;
                         xlnx,adc12-dig-port = <0x0>;
                         xlnx,adc-decimation-mode02 = <0x0>;
                         xlnx,adc-decimation-mode03 = <0x0>;
                         xlnx,ip-type = <0x2>;
-                        xlnx,dac-interpolation-mode10 = <0x0>;
+                        xlnx,dac-interpolation-mode10 = <0x1>;
                         xlnx,adc1-clock-source = <0x1>;
                         xlnx,dac-interpolation-mode11 = <0x0>;
                         xlnx,adc1-slices = <0x2>;
                         xlnx,dac-interpolation-mode12 = <0x0>;
-                        xlnx,dac3-refclk-freq = <0x1900>;
+                        xlnx,dac3-refclk-freq = <0x190>;
                         xlnx,adc1-fs-max = <0x5>;
                         compatible = "xlnx,usp-rf-data-converter-2.6";
                         xlnx,dac-interpolation-mode13 = <0x0>;
                         xlnx,dac2-clock-dist = <0x0>;
                         xlnx,adc3-sampling-rate = <0x2>;
-                        xlnx,adc-decimation-mode10 = <0x0>;
-                        xlnx,adc-decimation-mode11 = <0x0>;
+                        xlnx,adc-decimation-mode10 = <0x1>;
+                        xlnx,adc-decimation-mode11 = <0x1>;
                         xlnx,madc-outclk-freq = <0xee6b28>;
                         xlnx,adc-decimation-mode12 = <0x0>;
                         xlnx,adc-decimation-mode13 = <0x0>;
                         xlnx,mdac-enable = <0x0>;
-                        xlnx,dac-interpolation-mode20 = <0x0>;
+                        xlnx,dac-interpolation-mode20 = <0x1>;
                         xlnx,dac0-link-coupling = <0x0>;
                         xlnx,dac-interpolation-mode21 = <0x0>;
-                        xlnx,dac3-fabric-freq = <0x0>;
+                        xlnx,dac3-fabric-freq = <0x190>;
                         xlnx,high-speed-adc = <0x1>;
                         xlnx,dac-interpolation-mode22 = <0x0>;
                         xlnx,dac-interpolation-mode23 = <0x0>;
-                        xlnx,adc-decimation-mode20 = <0x0>;
-                        xlnx,adc3-enable = <0x0>;
-                        xlnx,adc-decimation-mode21 = <0x0>;
+                        xlnx,adc-decimation-mode20 = <0x1>;
+                        xlnx,adc3-enable = <0x1>;
+                        xlnx,adc-decimation-mode21 = <0x1>;
                         xlnx,adc-decimation-mode22 = <0x0>;
                         xlnx,adc-decimation-mode23 = <0x0>;
-                        xlnx,dac-interpolation-mode30 = <0x0>;
+                        xlnx,dac-interpolation-mode30 = <0x1>;
                         xlnx,dac-interpolation-mode31 = <0x0>;
                         xlnx,adc1-outclk-freq = <0xee6b28>;
                         xlnx,adc1-clock-dist = <0x0>;
+                        xlnx,dac-slice30-enable;
                         xlnx,dac-interpolation-mode32 = <0x0>;
-                        xlnx,adc2-decimation = <0x0>;
+                        xlnx,adc2-decimation = <0x1>;
                         xlnx,dac-interpolation-mode33 = <0x0>;
                         xlnx,adc0-vco = <0x2134>;
                         xlnx,mdac-nyquist00 = <0x0>;
-                        xlnx,dac2-interpolation = <0x0>;
+                        xlnx,dac2-interpolation = <0x1>;
                         xlnx,adc0-clock-source = <0x0>;
-                        xlnx,adc-decimation-mode30 = <0x0>;
+                        xlnx,adc-decimation-mode30 = <0x1>;
                         xlnx,mdac-nyquist01 = <0x0>;
-                        xlnx,adc-decimation-mode31 = <0x0>;
+                        xlnx,adc-decimation-mode31 = <0x1>;
                         xlnx,mdac-nyquist02 = <0x0>;
                         xlnx,adc1-obs-fabric-freq = <0x0>;
                         xlnx,adc-decimation-mode32 = <0x0>;
@@ -4734,7 +4742,7 @@
                         xlnx,dac3-sampling-rate = <0x61a800>;
                         xlnx,mdac-tdd-rts01 = <0x0>;
                         xlnx,dac3-clock-dist = <0x0>;
-                        xlnx,adc1-enable = <0x0>;
+                        xlnx,adc1-enable = <0x1>;
                         xlnx,mdac-tdd-rts02 = <0x0>;
                         xlnx,mdac-tdd-rts03 = <0x0>;
                         xlnx,mdac-mode00 = <0x0>;
@@ -4742,9 +4750,10 @@
                         xlnx,mdac-mode01 = <0x0>;
                         xlnx,adc32-dig-port = <0x0>;
                         xlnx,mdac-mode02 = <0x0>;
-                        xlnx,dac2-refclk-freq = <0x1900>;
+                        xlnx,dac2-refclk-freq = <0x190>;
+                        xlnx,dac0-pll-enable;
                         xlnx,mdac-mode03 = <0x0>;
-                        xlnx,dac2-outdiv = <0x1>;
+                        xlnx,dac2-outdiv = <0x2>;
                         xlnx,adc1-link-coupling = <0x0>;
                         xlnx,adc01-dig-port = <0x0>;
                         xlnx,adc-mixer-mode00 = <0x2>;
@@ -4752,8 +4761,8 @@
                         xlnx,adc-mixer-mode02 = <0x2>;
                         xlnx,adc-mixer-mode03 = <0x2>;
                         xlnx,tb-dac-fft;
-                        xlnx,dac2-fabric-freq = <0x0>;
-                        xlnx,dac3-clock-source = <0x7>;
+                        xlnx,dac2-fabric-freq = <0x190>;
+                        xlnx,dac3-clock-source = <0x4>;
                         xlnx,vnc-include-fs2-change;
                         xlnx,dac-data-width00 = <0x10>;
                         xlnx,dac0-refclk-div = <0x1>;
@@ -4761,7 +4770,7 @@
                         xlnx,dac-decoder-mode00 = <0x0>;
                         xlnx,dac-data-width01 = <0x10>;
                         xlnx,adc-mixer-mode10 = <0x2>;
-                        xlnx,adc3-decimation = <0x0>;
+                        xlnx,adc3-decimation = <0x1>;
                         xlnx,mdac-sampling-rate = <0x61a800>;
                         xlnx,dac-decoder-mode01 = <0x0>;
                         xlnx,dac-data-width02 = <0x10>;
@@ -4773,7 +4782,7 @@
                         xlnx,adc-mixer-mode12 = <0x2>;
                         num-insts = <0x1>;
                         xlnx,dac-decoder-mode03 = <0x0>;
-                        xlnx,dac0-outdiv = <0x1>;
+                        xlnx,dac0-outdiv = <0x2>;
                         xlnx,adc-mixer-mode13 = <0x2>;
                         xlnx,madc-data-width00 = <0x8>;
                         xlnx,sysref-source = <0x1>;
@@ -4782,6 +4791,7 @@
                         xlnx,madc-data-width02 = <0x8>;
                         xlnx,madc-data-width03 = <0x8>;
                         xlnx,dac-vop-mode = <0x1>;
+                        xlnx,adc-slice21-enable;
                         xlnx,dac-data-width10 = <0x10>;
                         xlnx,adc-obs-decimation-mode00 = <0x1>;
                         xlnx,rable = <0x0>;
@@ -4806,6 +4816,7 @@
                         xlnx,adc-mixer-type00 = <0x1>;
                         xlnx,adc-mixer-mode23 = <0x2>;
                         xlnx,madc-calopt-mode03 = <0x1>;
+                        xlnx,dac1-pll-enable;
                         xlnx,dac1-link-coupling = <0x0>;
                         xlnx,adc-mixer-type01 = <0x1>;
                         xlnx,adc-mixer-type02 = <0x3>;
@@ -4818,18 +4829,19 @@
                         xlnx,adc-mixer-mode30 = <0x2>;
                         xlnx,dac-decoder-mode21 = <0x0>;
                         xlnx,dac-data-width22 = <0x10>;
-                        xlnx,dac1-refclk-freq = <0x1900>;
+                        xlnx,dac1-refclk-freq = <0x190>;
                         xlnx,adc-obs-decimation-mode12 = <0x1>;
                         xlnx,adc-mixer-mode31 = <0x2>;
                         xlnx,dac-decoder-mode22 = <0x0>;
                         xlnx,dac-data-width23 = <0x10>;
-                        xlnx,dac2-clock-source = <0x6>;
+                        xlnx,dac2-clock-source = <0x4>;
                         xlnx,adc-obs-decimation-mode13 = <0x1>;
                         xlnx,adc-mixer-mode32 = <0x2>;
                         xlnx,dac-decoder-mode23 = <0x0>;
-                        xlnx,adc-mixer-type10 = <0x3>;
+                        xlnx,adc-mixer-type10 = <0x1>;
                         xlnx,adc-mixer-mode33 = <0x2>;
-                        xlnx,adc-mixer-type11 = <0x3>;
+                        xlnx,dac-slice02-enable;
+                        xlnx,adc-mixer-type11 = <0x1>;
                         xlnx,adc-mixer-type12 = <0x3>;
                         xlnx,adc2-band = <0x0>;
                         xlnx,madc-nco-freq00 = <0x0>;
@@ -4846,8 +4858,8 @@
                         xlnx,madc-nco-freq03 = <0x0>;
                         xlnx,dac-decoder-mode30 = <0x0>;
                         xlnx,dac-data-width31 = <0x10>;
-                        xlnx,dac3-interpolation = <0x0>;
-                        xlnx,dac1-fabric-freq = <0x0>;
+                        xlnx,dac3-interpolation = <0x1>;
+                        xlnx,dac1-fabric-freq = <0x190>;
                         xlnx,adc-obs-decimation-mode21 = <0x1>;
                         xlnx,dac-decoder-mode31 = <0x0>;
                         xlnx,dac-data-width32 = <0x10>;
@@ -4858,11 +4870,11 @@
                         xlnx,adc-obs-decimation-mode23 = <0x1>;
                         xlnx,adc2-outdiv = <0x1>;
                         xlnx,dac-decoder-mode33 = <0x0>;
-                        xlnx,adc-mixer-type20 = <0x3>;
+                        xlnx,adc-mixer-type20 = <0x1>;
                         xlnx,ams-factory-var = <0x0>;
-                        xlnx,adc-mixer-type21 = <0x3>;
+                        xlnx,adc-mixer-type21 = <0x1>;
                         xlnx,adc-mixer-type22 = <0x3>;
-                        xlnx,dac1-vco = <0x2134>;
+                        xlnx,dac1-vco = <0x3200>;
                         xlnx,adc-mixer-type23 = <0x3>;
                         xlnx,tb-adc-fft;
                         xlnx,adc-obs-decimation-mode30 = <0x1>;
@@ -4871,12 +4883,13 @@
                         xlnx,dac2-slices = <0x2>;
                         xlnx,adc-obs-decimation-mode32 = <0x1>;
                         xlnx,rf-analyzer = <0x0>;
-                        xlnx,dac2-fs-max = <0xa>;
+                        xlnx,dac2-pll-enable;
+                        xlnx,dac2-fs-max = <0x7>;
                         xlnx,adc-obs-decimation-mode33 = <0x1>;
                         xlnx,adc2-link-coupling = <0x0>;
-                        xlnx,adc-mixer-type30 = <0x3>;
+                        xlnx,adc-mixer-type30 = <0x1>;
                         xlnx,adc0-refclk-div = <0x1>;
-                        xlnx,adc-mixer-type31 = <0x3>;
+                        xlnx,adc-mixer-type31 = <0x1>;
                         xlnx,adc-dither00;
                         xlnx,madc-link-coupling = <0x0>;
                         xlnx,adc-mixer-type32 = <0x3>;
@@ -4884,10 +4897,16 @@
                         xlnx,adc-mixer-type33 = <0x3>;
                         xlnx,adc2-vco = <0x2134>;
                         xlnx,adc-dither02;
-                        xlnx,dac1-clock-source = <0x5>;
+                        xlnx,dac1-clock-source = <0x4>;
                         xlnx,adc0-outdiv = <0x1>;
                         xlnx,adc-dither03;
                         clocks = <&zynqmp_clk 0x47>,
+                         <&zynqmp_clk 0x47>,
+                         <&zynqmp_clk 0x47>,
+                         <&zynqmp_clk 0x47>,
+                         <&zynqmp_clk 0x47>,
+                         <&zynqmp_clk 0x47>,
+                         <&zynqmp_clk 0x47>,
                          <&zynqmp_clk 0x47>,
                          <&zynqmp_clk 0x47>;
                         xlnx,mdac-mixer-mode00 = <0x2>;
@@ -4906,7 +4925,7 @@
                         xlnx,dac2-refclk-div = <0x1>;
                         xlnx,adc-dither10;
                         xlnx,mdac-nco-freq02 = <0x0>;
-                        xlnx,dac0-refclk-freq = <0x1900>;
+                        xlnx,dac0-refclk-freq = <0x190>;
                         xlnx,adc-tdd-rts00 = <0x0>;
                         xlnx,adc-dither11;
                         xlnx,mdac-nco-freq03 = <0x0>;
@@ -4933,15 +4952,16 @@
                         xlnx,adc-dither23;
                         xlnx,dac2-link-coupling = <0x0>;
                         xlnx,adc-tdd-rts13 = <0x0>;
+                        xlnx,dac3-pll-enable;
                         xlnx,calibration-time = <0xa>;
                         xlnx,adc-nyquist20 = <0x0>;
-                        xlnx,adc10-dig-port = <0x0>;
+                        xlnx,adc10-dig-port = <0x1>;
                         xlnx,dac3-outclk-freq = <0x32>;
                         xlnx,adc-nyquist21 = <0x0>;
                         xlnx,adc1-refclk-div = <0x1>;
                         xlnx,adc02-dig-port = <0x0>;
                         xlnx,mdac-mixer-type00 = <0x3>;
-                        xlnx,dac2-enable = <0x0>;
+                        xlnx,dac2-enable = <0x1>;
                         xlnx,adc-nyquist22 = <0x0>;
                         xlnx,mdac-mixer-type01 = <0x3>;
                         xlnx,dac0-clock-source = <0x4>;
@@ -4958,14 +4978,14 @@
 
                         dac@0 {
                                 xlnx,fabric-freq = "400.000";
-                                xlnx,outdiv = <0x1>;
+                                xlnx,outdiv = <0x2>;
                                 xlnx,slices = <0x2>;
-                                xlnx,pll-enable = <0x0>;
+                                xlnx,pll-enable = <0x1>;
                                 xlnx,sampling-rate = "6.4";
                                 xlnx,fs-max = "7.000";
                                 xlnx,link-coupling = <0x0>;
-                                xlnx,refclk-freq = "6400.000";
-                                xlnx,fbdiv = <0xa>;
+                                xlnx,refclk-freq = "400.000";
+                                xlnx,fbdiv = <0x20>;
                                 xlnx,band = <0x0>;
                                 xlnx,enable = <0x1>;
                                 xlnx,refclk-div = <0x1>;
@@ -4988,7 +5008,7 @@
                                         xlnx,mixer-mode = <0x2>;
                                         xlnx,decoder-mode = <0x0>;
                                         xlnx,invsinc-ctrl = <0x0>;
-                                        xlnx,slice-enable = <0x0>;
+                                        xlnx,slice-enable = <0x1>;
                                 };
 
                                 dac0ap@3 {
@@ -5019,10 +5039,10 @@
                                 };
 
                                 dac0dp@2 {
-                                        xlnx,interpolation-mode = <0x0>;
+                                        xlnx,interpolation-mode = <0x1>;
                                         xlnx,nco-freq = "0.0";
                                         xlnx,data-width = <0x10>;
-                                        xlnx,mixer-type = <0x3>;
+                                        xlnx,mixer-type = <0x1>;
                                         xlnx,adder-enable = <0x0>;
                                         xlnx,fifo-enable = <0x0>;
                                         xlnx,data-type = <0x0>;
@@ -5040,24 +5060,24 @@
                         };
 
                         dac@1 {
-                                xlnx,fabric-freq = "0.0";
-                                xlnx,outdiv = <0x1>;
+                                xlnx,fabric-freq = "400.000";
+                                xlnx,outdiv = <0x2>;
                                 xlnx,slices = <0x2>;
-                                xlnx,pll-enable = <0x0>;
+                                xlnx,pll-enable = <0x1>;
                                 xlnx,sampling-rate = "6.4";
-                                xlnx,fs-max = "10.000";
+                                xlnx,fs-max = "7.000";
                                 xlnx,link-coupling = <0x0>;
-                                xlnx,refclk-freq = "6400.000";
-                                xlnx,fbdiv = <0xa>;
+                                xlnx,refclk-freq = "400.000";
+                                xlnx,fbdiv = <0x20>;
                                 xlnx,band = <0x0>;
-                                xlnx,enable = <0x0>;
+                                xlnx,enable = <0x1>;
                                 xlnx,refclk-div = <0x1>;
 
                                 dac1ap@0 {
                                         xlnx,mixer-mode = <0x2>;
                                         xlnx,decoder-mode = <0x0>;
                                         xlnx,invsinc-ctrl = <0x0>;
-                                        xlnx,slice-enable = <0x0>;
+                                        xlnx,slice-enable = <0x1>;
                                 };
 
                                 dac1ap@1 {
@@ -5082,10 +5102,10 @@
                                 };
 
                                 dac1dp@0 {
-                                        xlnx,interpolation-mode = <0x0>;
+                                        xlnx,interpolation-mode = <0x1>;
                                         xlnx,nco-freq = "0.0";
                                         xlnx,data-width = <0x10>;
-                                        xlnx,mixer-type = <0x3>;
+                                        xlnx,mixer-type = <0x1>;
                                         xlnx,adder-enable = <0x0>;
                                         xlnx,fifo-enable = <0x0>;
                                         xlnx,data-type = <0x0>;
@@ -5123,24 +5143,24 @@
                         };
 
                         dac@2 {
-                                xlnx,fabric-freq = "0.0";
-                                xlnx,outdiv = <0x1>;
+                                xlnx,fabric-freq = "400.000";
+                                xlnx,outdiv = <0x2>;
                                 xlnx,slices = <0x2>;
-                                xlnx,pll-enable = <0x0>;
+                                xlnx,pll-enable = <0x1>;
                                 xlnx,sampling-rate = "6.4";
-                                xlnx,fs-max = "10.000";
+                                xlnx,fs-max = "7.000";
                                 xlnx,link-coupling = <0x0>;
-                                xlnx,refclk-freq = "6400.000";
-                                xlnx,fbdiv = <0xa>;
+                                xlnx,refclk-freq = "400.000";
+                                xlnx,fbdiv = <0x20>;
                                 xlnx,band = <0x0>;
-                                xlnx,enable = <0x0>;
+                                xlnx,enable = <0x1>;
                                 xlnx,refclk-div = <0x1>;
 
                                 dac2ap@0 {
                                         xlnx,mixer-mode = <0x2>;
                                         xlnx,decoder-mode = <0x0>;
                                         xlnx,invsinc-ctrl = <0x0>;
-                                        xlnx,slice-enable = <0x0>;
+                                        xlnx,slice-enable = <0x1>;
                                 };
 
                                 dac2ap@1 {
@@ -5165,10 +5185,10 @@
                                 };
 
                                 dac2dp@0 {
-                                        xlnx,interpolation-mode = <0x0>;
+                                        xlnx,interpolation-mode = <0x1>;
                                         xlnx,nco-freq = "0.0";
                                         xlnx,data-width = <0x10>;
-                                        xlnx,mixer-type = <0x3>;
+                                        xlnx,mixer-type = <0x1>;
                                         xlnx,adder-enable = <0x0>;
                                         xlnx,fifo-enable = <0x0>;
                                         xlnx,data-type = <0x0>;
@@ -5206,24 +5226,24 @@
                         };
 
                         dac@3 {
-                                xlnx,fabric-freq = "0.0";
-                                xlnx,outdiv = <0x1>;
+                                xlnx,fabric-freq = "400.000";
+                                xlnx,outdiv = <0x2>;
                                 xlnx,slices = <0x2>;
-                                xlnx,pll-enable = <0x0>;
+                                xlnx,pll-enable = <0x1>;
                                 xlnx,sampling-rate = "6.4";
-                                xlnx,fs-max = "10.000";
+                                xlnx,fs-max = "7.000";
                                 xlnx,link-coupling = <0x0>;
-                                xlnx,refclk-freq = "6400.000";
-                                xlnx,fbdiv = <0xa>;
+                                xlnx,refclk-freq = "400.000";
+                                xlnx,fbdiv = <0x20>;
                                 xlnx,band = <0x0>;
-                                xlnx,enable = <0x0>;
+                                xlnx,enable = <0x1>;
                                 xlnx,refclk-div = <0x1>;
 
                                 dac3ap@0 {
                                         xlnx,mixer-mode = <0x2>;
                                         xlnx,decoder-mode = <0x0>;
                                         xlnx,invsinc-ctrl = <0x0>;
-                                        xlnx,slice-enable = <0x0>;
+                                        xlnx,slice-enable = <0x1>;
                                 };
 
                                 dac3ap@1 {
@@ -5248,10 +5268,10 @@
                                 };
 
                                 dac3dp@0 {
-                                        xlnx,interpolation-mode = <0x0>;
+                                        xlnx,interpolation-mode = <0x1>;
                                         xlnx,nco-freq = "0.0";
                                         xlnx,data-width = <0x10>;
-                                        xlnx,mixer-type = <0x3>;
+                                        xlnx,mixer-type = <0x1>;
                                         xlnx,adder-enable = <0x0>;
                                         xlnx,fifo-enable = <0x0>;
                                         xlnx,data-type = <0x0>;
@@ -5359,13 +5379,13 @@
                         };
 
                         adc@1 {
-                                xlnx,fabric-freq = "0.0";
+                                xlnx,fabric-freq = "250.000";
                                 xlnx,refclk-freq = "2000.000";
                                 xlnx,slices = <0x2>;
                                 xlnx,refclk-div = <0x1>;
                                 xlnx,outdiv = <0x1>;
                                 xlnx,fbdiv = <0xa>;
-                                xlnx,enable = <0x0>;
+                                xlnx,enable = <0x1>;
                                 xlnx,fs-max = "5.000";
                                 xlnx,sampling-rate = "2.0";
                                 xlnx,pll-enable = <0x0>;
@@ -5373,12 +5393,12 @@
 
                                 adc1ap@0 {
                                         xlnx,mixer-mode = <0x2>;
-                                        xlnx,slice-enable = <0x0>;
+                                        xlnx,slice-enable = <0x1>;
                                 };
 
                                 adc1ap@1 {
                                         xlnx,mixer-mode = <0x2>;
-                                        xlnx,slice-enable = <0x0>;
+                                        xlnx,slice-enable = <0x1>;
                                 };
 
                                 adc1ap@2 {
@@ -5393,18 +5413,18 @@
 
                                 adc1dp@0 {
                                         xlnx,nco-freq = "0.0";
-                                        xlnx,decimation-mode = <0x0>;
+                                        xlnx,decimation-mode = <0x1>;
                                         xlnx,data-width = <0x8>;
-                                        xlnx,mixer-type = <0x3>;
+                                        xlnx,mixer-type = <0x1>;
                                         xlnx,fifo-enable = <0x0>;
                                         xlnx,data-type = <0x0>;
                                 };
 
                                 adc1dp@1 {
                                         xlnx,nco-freq = "0.0";
-                                        xlnx,decimation-mode = <0x0>;
+                                        xlnx,decimation-mode = <0x1>;
                                         xlnx,data-width = <0x8>;
-                                        xlnx,mixer-type = <0x3>;
+                                        xlnx,mixer-type = <0x1>;
                                         xlnx,fifo-enable = <0x0>;
                                         xlnx,data-type = <0x0>;
                                 };
@@ -5429,13 +5449,13 @@
                         };
 
                         adc@2 {
-                                xlnx,fabric-freq = "0.0";
+                                xlnx,fabric-freq = "250.000";
                                 xlnx,refclk-freq = "2000.000";
                                 xlnx,slices = <0x2>;
                                 xlnx,refclk-div = <0x1>;
                                 xlnx,outdiv = <0x1>;
                                 xlnx,fbdiv = <0xa>;
-                                xlnx,enable = <0x0>;
+                                xlnx,enable = <0x1>;
                                 xlnx,fs-max = "5.000";
                                 xlnx,sampling-rate = "2.0";
                                 xlnx,pll-enable = <0x0>;
@@ -5443,12 +5463,12 @@
 
                                 adc2ap@0 {
                                         xlnx,mixer-mode = <0x2>;
-                                        xlnx,slice-enable = <0x0>;
+                                        xlnx,slice-enable = <0x1>;
                                 };
 
                                 adc2ap@1 {
                                         xlnx,mixer-mode = <0x2>;
-                                        xlnx,slice-enable = <0x0>;
+                                        xlnx,slice-enable = <0x1>;
                                 };
 
                                 adc2ap@2 {
@@ -5463,18 +5483,18 @@
 
                                 adc2dp@0 {
                                         xlnx,nco-freq = "0.0";
-                                        xlnx,decimation-mode = <0x0>;
+                                        xlnx,decimation-mode = <0x1>;
                                         xlnx,data-width = <0x8>;
-                                        xlnx,mixer-type = <0x3>;
+                                        xlnx,mixer-type = <0x1>;
                                         xlnx,fifo-enable = <0x0>;
                                         xlnx,data-type = <0x0>;
                                 };
 
                                 adc2dp@1 {
                                         xlnx,nco-freq = "0.0";
-                                        xlnx,decimation-mode = <0x0>;
+                                        xlnx,decimation-mode = <0x1>;
                                         xlnx,data-width = <0x8>;
-                                        xlnx,mixer-type = <0x3>;
+                                        xlnx,mixer-type = <0x1>;
                                         xlnx,fifo-enable = <0x0>;
                                         xlnx,data-type = <0x0>;
                                 };
@@ -5499,13 +5519,13 @@
                         };
 
                         adc@3 {
-                                xlnx,fabric-freq = "0.0";
+                                xlnx,fabric-freq = "250.000";
                                 xlnx,refclk-freq = "2000.000";
                                 xlnx,slices = <0x2>;
                                 xlnx,refclk-div = <0x1>;
                                 xlnx,outdiv = <0x1>;
                                 xlnx,fbdiv = <0xa>;
-                                xlnx,enable = <0x0>;
+                                xlnx,enable = <0x1>;
                                 xlnx,fs-max = "5.000";
                                 xlnx,sampling-rate = "2.0";
                                 xlnx,pll-enable = <0x0>;
@@ -5513,12 +5533,12 @@
 
                                 adc3ap@0 {
                                         xlnx,mixer-mode = <0x2>;
-                                        xlnx,slice-enable = <0x0>;
+                                        xlnx,slice-enable = <0x1>;
                                 };
 
                                 adc3ap@1 {
                                         xlnx,mixer-mode = <0x2>;
-                                        xlnx,slice-enable = <0x0>;
+                                        xlnx,slice-enable = <0x1>;
                                 };
 
                                 adc3ap@2 {
@@ -5533,18 +5553,18 @@
 
                                 adc3dp@0 {
                                         xlnx,nco-freq = "0.0";
-                                        xlnx,decimation-mode = <0x0>;
+                                        xlnx,decimation-mode = <0x1>;
                                         xlnx,data-width = <0x8>;
-                                        xlnx,mixer-type = <0x3>;
+                                        xlnx,mixer-type = <0x1>;
                                         xlnx,fifo-enable = <0x0>;
                                         xlnx,data-type = <0x0>;
                                 };
 
                                 adc3dp@1 {
                                         xlnx,nco-freq = "0.0";
-                                        xlnx,decimation-mode = <0x0>;
+                                        xlnx,decimation-mode = <0x1>;
                                         xlnx,data-width = <0x8>;
-                                        xlnx,mixer-type = <0x3>;
+                                        xlnx,mixer-type = <0x1>;
                                         xlnx,fifo-enable = <0x0>;
                                         xlnx,data-type = <0x0>;
                                 };
