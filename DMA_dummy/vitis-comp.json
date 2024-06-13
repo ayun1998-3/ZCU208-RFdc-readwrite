@@ -1,0 +1,71 @@
+{
+  "name": "DMA_dummy",
+  "type": "PLATFORM",
+  "configuration": {
+    "description": "",
+    "xsa": "C:\\Users\\rrx7xw\\Documents\\RESEARCH-Summer2024\\VivadoDesigns\\dma_design_template\\mpsoc_preset_wrapper.xsa",
+    "xsaPathInPlatform": "DMA_dummy\\hw\\mpsoc_preset_wrapper.xsa",
+    "emulationXsa": "",
+    "emulationXsaPathInPlatform": "",
+    "isCustomFSBL": false,
+    "fsblPath": "",
+    "pmufwElf": "",
+    "flow": "EMBEDDED",
+    "processorsMap": {
+      "psu_cortexa53_0": "psu_cortexa53",
+      "psu_cortexa53_1": "psu_cortexa53",
+      "psu_cortexa53_2": "psu_cortexa53",
+      "psu_cortexa53_3": "psu_cortexa53",
+      "psu_cortexr5_0": "psu_cortexr5",
+      "psu_cortexr5_1": "psu_cortexr5",
+      "psu_pmu_0": "psu_pmu"
+    },
+    "supportedFamily": "zynquplus",
+    "componentType": "PLATFORM",
+    "domains": [
+      {
+        "name": "zynqmp_fsbl",
+        "displayName": "zynqmp_fsbl",
+        "processor": "psu_cortexa53_0",
+        "cpuType": "cortex-a53",
+        "cpuInstance": "psu_cortexa53_0",
+        "os": "standalone",
+        "appTemplate": "zynqmp_fsbl",
+        "isBootDomain": true,
+        "qemuData": "C:\\Xilinx\\Vitis_Repo\\ZCU208-RFdc-readwrite\\DMA_dummy\\resources\\zynqmp_fsbl\\qemu",
+        "qemuArgsFile": "C:\\Xilinx\\Vitis_Repo\\ZCU208-RFdc-readwrite\\DMA_dummy\\resources\\zynqmp_fsbl\\qemu\\qemu_args.txt",
+        "pmcQemuArgsFile": "C:\\Xilinx\\Vitis_Repo\\ZCU208-RFdc-readwrite\\DMA_dummy\\resources\\zynqmp_fsbl\\qemu\\pmu_args.txt",
+        "isBSPGenReq": false
+      },
+      {
+        "name": "zynqmp_pmufw",
+        "displayName": "zynqmp_pmufw",
+        "processor": "psu_pmu_0",
+        "cpuType": "psu_pmu",
+        "cpuInstance": "psu_pmu_0",
+        "os": "standalone",
+        "appTemplate": "zynqmp_pmufw",
+        "isBootDomain": true,
+        "qemuData": "C:\\Xilinx\\Vitis_Repo\\ZCU208-RFdc-readwrite\\DMA_dummy\\resources\\zynqmp_pmufw\\qemu",
+        "qemuArgsFile": "C:\\Xilinx\\Vitis_Repo\\ZCU208-RFdc-readwrite\\DMA_dummy\\resources\\zynqmp_pmufw\\qemu\\qemu_args.txt",
+        "pmcQemuArgsFile": "C:\\Xilinx\\Vitis_Repo\\ZCU208-RFdc-readwrite\\DMA_dummy\\resources\\zynqmp_pmufw\\qemu\\pmu_args.txt",
+        "isBSPGenReq": false
+      },
+      {
+        "name": "standalone_psu_cortexa53_0",
+        "displayName": "standalone_psu_cortexa53_0",
+        "processor": "psu_cortexa53_0",
+        "cpuType": "cortex-a53",
+        "cpuInstance": "psu_cortexa53_0",
+        "os": "standalone",
+        "appTemplate": "empty_application",
+        "isBootDomain": false,
+        "qemuData": "C:\\Xilinx\\Vitis_Repo\\ZCU208-RFdc-readwrite\\DMA_dummy\\resources\\standalone_psu_cortexa53_0\\qemu",
+        "qemuArgsFile": "C:\\Xilinx\\Vitis_Repo\\ZCU208-RFdc-readwrite\\DMA_dummy\\resources\\standalone_psu_cortexa53_0\\qemu\\qemu_args.txt",
+        "pmcQemuArgsFile": "C:\\Xilinx\\Vitis_Repo\\ZCU208-RFdc-readwrite\\DMA_dummy\\resources\\standalone_psu_cortexa53_0\\qemu\\pmu_args.txt",
+        "isBSPGenReq": false
+      }
+    ],
+    "emptyToolchainConfiguration": []
+  }
+}

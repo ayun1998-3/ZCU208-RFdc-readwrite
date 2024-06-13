@@ -1,7 +1,7 @@
 {
   "name": "dma_loopback_app",
   "type": "HOST",
-  "platform": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\dma_loopback\\export\\dma_loopback\\dma_loopback.xpfm",
+  "platform": "C:\\Xilinx\\Vitis_Repo\\ZCU208-RFdc-readwrite\\DMA_dummy\\export\\DMA_dummy\\DMA_dummy.xpfm",
   "domain": "standalone_psu_cortexa53_0",
   "cpuInstance": "psu_cortexa53_0",
   "cpuType": "cortex-a53",
