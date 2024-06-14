@@ -1,3 +1,0 @@
-C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/dma_loopback/zynqmp_pmufw/build/CMakeFiles/pmufw.elf.dir
-C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/dma_loopback/zynqmp_pmufw/build/CMakeFiles/edit_cache.dir
-C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/dma_loopback/zynqmp_pmufw/build/CMakeFiles/rebuild_cache.dir
