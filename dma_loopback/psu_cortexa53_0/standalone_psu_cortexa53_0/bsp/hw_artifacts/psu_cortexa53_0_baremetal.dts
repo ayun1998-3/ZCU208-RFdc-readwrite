@@ -143,7 +143,7 @@
                  <0x0 0xfd4d0000 &watchdog0 0x0 0xfd4d0000 0x0 0x10000>;
                 #ranges-address-cells = <0x2>;
                 #ranges-size-cells = <0x2>;
-                phandle = <0x96>;
+                phandle = <0x97>;
 
                 psu_cortexa53_0: cpu@0 {
                         compatible = "arm,cortex-a53";
@@ -302,7 +302,7 @@
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
                 ranges;
-                phandle = <0x9d>;
+                phandle = <0x9e>;
 
                 ipi_mailbox_pmu1: mailbox@ff9905c0 {
                         bootph-all;
@@ -342,7 +342,7 @@
                                 interrupts = <0x0 0x23 0x4>;
                                 mboxes = <0x87 0x0 0x87 0x1>;
                                 mbox-names = "tx", "rx";
-                                phandle = <0x9f>;
+                                phandle = <0xa0>;
                         };
 
                         nvmem-firmware {
@@ -352,97 +352,97 @@
 
                                 soc_revision: soc-revision@0 {
                                         reg = <0x0 0x4>;
-                                        phandle = <0xa0>;
+                                        phandle = <0xa1>;
                                 };
 
                                 efuse_dna: efuse-dna@c {
                                         reg = <0xc 0xc>;
-                                        phandle = <0xa1>;
+                                        phandle = <0xa2>;
                                 };
 
                                 efuse_usr0: efuse-usr0@20 {
                                         reg = <0x20 0x4>;
-                                        phandle = <0xa2>;
+                                        phandle = <0xa3>;
                                 };
 
                                 efuse_usr1: efuse-usr1@24 {
                                         reg = <0x24 0x4>;
-                                        phandle = <0xa3>;
+                                        phandle = <0xa4>;
                                 };
 
                                 efuse_usr2: efuse-usr2@28 {
                                         reg = <0x28 0x4>;
-                                        phandle = <0xa4>;
+                                        phandle = <0xa5>;
                                 };
 
                                 efuse_usr3: efuse-usr3@2c {
                                         reg = <0x2c 0x4>;
-                                        phandle = <0xa5>;
+                                        phandle = <0xa6>;
                                 };
 
                                 efuse_usr4: efuse-usr4@30 {
                                         reg = <0x30 0x4>;
-                                        phandle = <0xa6>;
+                                        phandle = <0xa7>;
                                 };
 
                                 efuse_usr5: efuse-usr5@34 {
                                         reg = <0x34 0x4>;
-                                        phandle = <0xa7>;
+                                        phandle = <0xa8>;
                                 };
 
                                 efuse_usr6: efuse-usr6@38 {
                                         reg = <0x38 0x4>;
-                                        phandle = <0xa8>;
+                                        phandle = <0xa9>;
                                 };
 
                                 efuse_usr7: efuse-usr7@3c {
                                         reg = <0x3c 0x4>;
-                                        phandle = <0xa9>;
+                                        phandle = <0xaa>;
                                 };
 
                                 efuse_miscusr: efuse-miscusr@40 {
                                         reg = <0x40 0x4>;
-                                        phandle = <0xaa>;
+                                        phandle = <0xab>;
                                 };
 
                                 efuse_chash: efuse-chash@50 {
                                         reg = <0x50 0x4>;
-                                        phandle = <0xab>;
+                                        phandle = <0xac>;
                                 };
 
                                 efuse_pufmisc: efuse-pufmisc@54 {
                                         reg = <0x54 0x4>;
-                                        phandle = <0xac>;
+                                        phandle = <0xad>;
                                 };
 
                                 efuse_sec: efuse-sec@58 {
                                         reg = <0x58 0x4>;
-                                        phandle = <0xad>;
+                                        phandle = <0xae>;
                                 };
 
                                 efuse_spkid: efuse-spkid@5c {
                                         reg = <0x5c 0x4>;
-                                        phandle = <0xae>;
+                                        phandle = <0xaf>;
                                 };
 
                                 efuse_aeskey: efuse-aeskey@60 {
                                         reg = <0x60 0x20>;
-                                        phandle = <0xaf>;
+                                        phandle = <0xb0>;
                                 };
 
                                 efuse_ppk0hash: efuse-ppk0hash@a0 {
                                         reg = <0xa0 0x30>;
-                                        phandle = <0xb0>;
+                                        phandle = <0xb1>;
                                 };
 
                                 efuse_ppk1hash: efuse-ppk1hash@d0 {
                                         reg = <0xd0 0x30>;
-                                        phandle = <0xb1>;
+                                        phandle = <0xb2>;
                                 };
 
                                 efuse_pufuser: efuse-pufuser@100 {
                                         reg = <0x100 0x7f>;
-                                        phandle = <0xb2>;
+                                        phandle = <0xb3>;
                                 };
                         };
 
@@ -502,7 +502,7 @@
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
                 ranges;
-                phandle = <0xb3>;
+                phandle = <0xb4>;
         };
 
         amba_rpu: rpu-bus {
@@ -1603,7 +1603,7 @@
                                 xlnx,ipi-id = <0x0>;
                                 xlnx,ipi-buf-index = <0x2>;
                                 xlnx,ipi-req-msg-buf = <0xff990480>;
-                                phandle = <0xc4>;
+                                phandle = <0xc5>;
                         };
 
                         psu_ipi_0_1: child@1 {
@@ -1612,7 +1612,7 @@
                                 xlnx,ipi-id = <0x1>;
                                 xlnx,ipi-buf-index = <0x0>;
                                 xlnx,ipi-req-msg-buf = <0xff990400>;
-                                phandle = <0xc5>;
+                                phandle = <0xc6>;
                         };
 
                         psu_ipi_0_2: child@2 {
@@ -1621,7 +1621,7 @@
                                 xlnx,ipi-id = <0x2>;
                                 xlnx,ipi-buf-index = <0x1>;
                                 xlnx,ipi-req-msg-buf = <0xff990440>;
-                                phandle = <0xc6>;
+                                phandle = <0xc7>;
                         };
 
                         psu_ipi_0_3: child@3 {
@@ -1630,7 +1630,7 @@
                                 xlnx,ipi-id = <0x3>;
                                 xlnx,ipi-buf-index = <0x7>;
                                 xlnx,ipi-req-msg-buf = <0xff9905c0>;
-                                phandle = <0xc7>;
+                                phandle = <0xc8>;
                         };
 
                         psu_ipi_0_4: child@4 {
@@ -1639,7 +1639,7 @@
                                 xlnx,ipi-id = <0x4>;
                                 xlnx,ipi-buf-index = <0x7>;
                                 xlnx,ipi-req-msg-buf = <0xff9905c0>;
-                                phandle = <0xc8>;
+                                phandle = <0xc9>;
                         };
 
                         psu_ipi_0_5: child@5 {
@@ -1648,7 +1648,7 @@
                                 xlnx,ipi-id = <0x5>;
                                 xlnx,ipi-buf-index = <0x7>;
                                 xlnx,ipi-req-msg-buf = <0xff9905c0>;
-                                phandle = <0xc9>;
+                                phandle = <0xca>;
                         };
 
                         psu_ipi_0_6: child@6 {
@@ -1657,7 +1657,7 @@
                                 xlnx,ipi-id = <0x6>;
                                 xlnx,ipi-buf-index = <0x7>;
                                 xlnx,ipi-req-msg-buf = <0xff9905c0>;
-                                phandle = <0xca>;
+                                phandle = <0xcb>;
                         };
                 };
 
@@ -1743,7 +1743,7 @@
                         xlnx,is-hierarchy;
                         reg = <0x0 0xffe30000 0x0 0x10000>;
                         xlnx,name = "psu_r5_0_btcm_lockstep";
-                        phandle = <0xfa>;
+                        phandle = <0xfb>;
                 };
 
                 psu_r5_0_btcm: psu_r5_0_btcm@20000 {
@@ -1780,7 +1780,7 @@
                         xlnx,is-hierarchy;
                         reg = <0x0 0xffe10000 0x0 0x10000>;
                         xlnx,name = "psu_r5_0_atcm_lockstep";
-                        phandle = <0xfb>;
+                        phandle = <0xfc>;
                 };
 
                 psu_r5_0_atcm: psu_r5_0_atcm@0 {
@@ -2279,7 +2279,7 @@
 
                 psu_qspi_linear_0: psu_qspi_linear@c0000000 {
                         reg = <0x0 0xc0000000 0x0 0x20000000>;
-                        phandle = <0xff>;
+                        phandle = <0x100>;
                 };
 
                 gic_a53: interrupt-controller@f9010000 {
@@ -2302,7 +2302,7 @@
                 compatible = "indirect-bus";
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
-                phandle = <0x100>;
+                phandle = <0x101>;
 
                 lpd_xppu: xppu@ff980000 {
                         compatible = "xlnx,xppu";
@@ -2362,8 +2362,15 @@
                 compatible = "simple-bus";
                 #address-cells = <0x2>;
                 #size-cells = <0x2>;
-                firmware-name = "dma_template.bit.bin";
-                phandle = <0x105>;
+                firmware-name = "disconnect_v3.bit.bin";
+                phandle = <0x106>;
+
+                misc_clk_0: misc_clk_0 {
+                        compatible = "fixed-clock";
+                        clock-frequency = <0xbebba30>;
+                        #clock-cells = <0x0>;
+                        phandle = <0x96>;
+                };
 
                 axi_dma_0: axi_dma@a0000000 {
                         xlnx,dlytmr-resolution = <0x7d>;
@@ -2397,9 +2404,9 @@
                         xlnx,include-s2mm-sf = <0x1>;
                         xlnx,c-include-mm2s-dre = <0x0>;
                         xlnx,include-s2mm = <0x1>;
-                        clocks = <&zynqmp_clk 0x47>,
-                         <&zynqmp_clk 0x47>,
-                         <&zynqmp_clk 0x47>;
+                        clocks = <&misc_clk_0>,
+                         <&misc_clk_0>,
+                         <&misc_clk_0>;
                         xlnx,addrwidth = <0x31>;
                         xlnx,c-m-axi-mm2s-data-width = <0x20>;
                         xlnx,edk-iptype = "PERIPHERAL";
@@ -2429,7 +2436,7 @@
                                 xlnx,device-id = <0x0>;
                                 compatible = "xlnx,axi-dma-mm2s-channel";
                                 dma-channels = <0x1>;
-                                phandle = <0x106>;
+                                phandle = <0x107>;
                         };
 
                         dma_channel_a0000030: dma-channel@a0000030 {
@@ -2437,7 +2444,7 @@
                                 xlnx,device-id = <0x0>;
                                 compatible = "xlnx,axi-dma-s2mm-channel";
                                 dma-channels = <0x1>;
-                                phandle = <0x107>;
+                                phandle = <0x108>;
                         };
                 };
 
@@ -2448,7 +2455,7 @@
                         #clock-cells = <0x0>;
                         clock-output-names = "fabric_clk";
                         clocks = <&zynqmp_clk 0x47>;
-                        phandle = <0x108>;
+                        phandle = <0x109>;
                 };
         };
 
@@ -2664,6 +2671,7 @@
                 gt_crx_ref_clk = "/gt_crx_ref_clk";
                 aux_ref_clk = "/aux_ref_clk";
                 amba_pl = "/amba_pl";
+                misc_clk_0 = "/amba_pl/misc_clk_0";
                 axi_dma_0 = "/amba_pl/axi_dma@a0000000";
                 dma_channel_a0000000 = "/amba_pl/axi_dma@a0000000/dma-channel@a0000000";
                 dma_channel_a0000030 = "/amba_pl/axi_dma@a0000000/dma-channel@a0000030";

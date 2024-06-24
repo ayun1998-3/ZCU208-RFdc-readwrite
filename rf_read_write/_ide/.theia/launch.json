@@ -1,56 +1,56 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "tcf-debug",
-      "request": "launch",
-      "name": "rf_read_write_app_hw_1",
-      "debugType": "baremetal-zu",
-      "attachToRunningTargetOptions": {
-        "targetSetupMode": "standalone",
-        "executeScript": true,
-        "scriptPath": ""
-      },
-      "autoAttachProcessChildren": false,
-      "target": {
-        "targetConnectionId": "Local",
-        "peersIniPath": "../../../.wsdata/.peers.ini",
-        "context": "ZUPlus"
-      },
-      "targetSetup": {
-        "resetSystem": true,
-        "programDevice": true,
-        "enableRPUSplitMode": false,
-        "resetAPU": false,
-        "resetRPU": false,
-        "bitstreamFile": "${workspaceFolder}\\rf_read_write\\_ide\\bitstream\\rfdata_rw_hardware.bit",
-        "zuInitialization": {
-          "isFsbl": true,
-          "usingFSBL": {
-            "initWithFSBL": true,
-            "fsblFile": "${workspaceFolder}\\rf_rw_platform\\export\\rf_rw_platform\\sw\\boot\\fsbl.elf",
-            "fsblExitSymbol": "XFsbl_Exit"
-          },
-          "usingPsuInit": {
-            "runPsuInit": true,
-            "plPowerup": false,
-            "psuInitTclFile": "${workspaceFolder}\\rf_read_write\\_ide\\psinit\\psu_init.tcl"
-          }
-        },
-        "downloadElf": [
-          {
-            "core": "psu_cortexa53_0",
-            "resetProcessor": true,
-            "elfFile": "${workspaceFolder}\\rf_read_write\\build\\rf_read_write.elf",
-            "stopAtEntry": false
-          }
-        ],
-        "crossTriggerBreakpoints": {
-          "isSelected": false,
-          "breakpoints": []
-        }
-      },
-      "internalConsoleOptions": "openOnSessionStart"
-    }
-  ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "tcf-debug",
+			"request": "launch",
+			"name": "rf_read_write_app_hw_1",
+			"debugType": "baremetal-zu",
+			"attachToRunningTargetOptions": {
+				"targetSetupMode": "standalone",
+				"executeScript": true,
+				"scriptPath": ""
+			},
+			"autoAttachProcessChildren": false,
+			"target": {
+				"targetConnectionId": "Local",
+				"peersIniPath": "../../../.wsdata/.peers.ini",
+				"context": "ZUPlus"
+			},
+			"targetSetup": {
+				"resetSystem": true,
+				"programDevice": true,
+				"enableRPUSplitMode": false,
+				"resetAPU": false,
+				"resetRPU": false,
+				"bitstreamFile": "C:\\Users\\IECS-Lab\\Desktop\\example_projects\\rfdc_rw_v2\\rfdc_rw_v2.runs\\impl_1\\mpsoc_preset_wrapper.bit",
+				"zuInitialization": {
+					"isFsbl": true,
+					"usingFSBL": {
+						"initWithFSBL": true,
+						"fsblFile": "${workspaceFolder}\\rf_rw_platform\\export\\rf_rw_platform\\sw\\boot\\fsbl.elf",
+						"fsblExitSymbol": "XFsbl_Exit"
+					},
+					"usingPsuInit": {
+						"runPsuInit": true,
+						"plPowerup": false,
+						"psuInitTclFile": "${workspaceFolder}\\rf_read_write\\_ide\\psinit\\psu_init.tcl"
+					}
+				},
+				"downloadElf": [
+					{
+						"core": "psu_cortexa53_0",
+						"resetProcessor": true,
+						"elfFile": "${workspaceFolder}\\rf_read_write\\build\\rf_read_write.elf",
+						"stopAtEntry": false
+					}
+				],
+				"crossTriggerBreakpoints": {
+					"isSelected": false,
+					"breakpoints": []
+				}
+			},
+			"internalConsoleOptions": "openOnSessionStart"
+		}
+	]
 }

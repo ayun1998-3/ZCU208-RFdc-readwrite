@@ -1,56 +1,56 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "tcf-debug",
-      "request": "launch",
-      "name": "dma_loopback_app_app_hw_1",
-      "debugType": "baremetal-zu",
-      "attachToRunningTargetOptions": {
-        "targetSetupMode": "standalone",
-        "executeScript": true,
-        "scriptPath": ""
-      },
-      "autoAttachProcessChildren": false,
-      "target": {
-        "targetConnectionId": "Local",
-        "peersIniPath": "../../../.wsdata/.peers.ini",
-        "context": "ZUPlus"
-      },
-      "targetSetup": {
-        "resetSystem": true,
-        "programDevice": true,
-        "enableRPUSplitMode": false,
-        "resetAPU": false,
-        "resetRPU": false,
-        "bitstreamFile": "${workspaceFolder}\\dma_loopback_app\\_ide\\bitstream\\dma_template.bit",
-        "zuInitialization": {
-          "isFsbl": true,
-          "usingFSBL": {
-            "initWithFSBL": true,
-            "fsblFile": "${workspaceFolder}\\dma_loopback\\export\\dma_loopback\\sw\\boot\\fsbl.elf",
-            "fsblExitSymbol": "XFsbl_Exit"
-          },
-          "usingPsuInit": {
-            "runPsuInit": true,
-            "plPowerup": false,
-            "psuInitTclFile": "${workspaceFolder}\\dma_loopback_app\\_ide\\psinit\\psu_init.tcl"
-          }
-        },
-        "downloadElf": [
-          {
-            "core": "psu_cortexa53_0",
-            "resetProcessor": true,
-            "elfFile": "${workspaceFolder}\\dma_loopback_app\\build\\dma_loopback_app.elf",
-            "stopAtEntry": false
-          }
-        ],
-        "crossTriggerBreakpoints": {
-          "isSelected": false,
-          "breakpoints": []
-        }
-      },
-      "internalConsoleOptions": "openOnSessionStart"
-    }
-  ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "tcf-debug",
+			"request": "launch",
+			"name": "dma_loopback_app_app_hw_1",
+			"debugType": "baremetal-zu",
+			"attachToRunningTargetOptions": {
+				"targetSetupMode": "standalone",
+				"executeScript": true,
+				"scriptPath": ""
+			},
+			"autoAttachProcessChildren": false,
+			"target": {
+				"targetConnectionId": "Local",
+				"peersIniPath": "../../../.wsdata/.peers.ini",
+				"context": "ZUPlus"
+			},
+			"targetSetup": {
+				"resetSystem": true,
+				"programDevice": true,
+				"enableRPUSplitMode": false,
+				"resetAPU": false,
+				"resetRPU": false,
+				"bitstreamFile": "C:\\Users\\IECS-Lab\\Desktop\\example_projects\\dma_design_template\\dma_design_template.runs\\impl_1\\mpsoc_preset_wrapper.bit",
+				"zuInitialization": {
+					"isFsbl": true,
+					"usingFSBL": {
+						"initWithFSBL": true,
+						"fsblFile": "${workspaceFolder}\\dma_loopback\\export\\dma_loopback\\sw\\boot\\fsbl.elf",
+						"fsblExitSymbol": "XFsbl_Exit"
+					},
+					"usingPsuInit": {
+						"runPsuInit": true,
+						"plPowerup": false,
+						"psuInitTclFile": "${workspaceFolder}\\dma_loopback_app\\_ide\\psinit\\psu_init.tcl"
+					}
+				},
+				"downloadElf": [
+					{
+						"core": "psu_cortexa53_0",
+						"resetProcessor": true,
+						"elfFile": "${workspaceFolder}\\dma_loopback_app\\build\\dma_loopback_app.elf",
+						"stopAtEntry": false
+					}
+				],
+				"crossTriggerBreakpoints": {
+					"isSelected": false,
+					"breakpoints": []
+				}
+			},
+			"internalConsoleOptions": "openOnSessionStart"
+		}
+	]
 }

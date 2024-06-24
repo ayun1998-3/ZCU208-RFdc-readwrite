@@ -4,76 +4,13 @@
 		compatible = "simple-bus";
 		#address-cells = <2>;
 		#size-cells = <2>;
-		firmware-name = "rfdata_rw_hardware.bit.bin";
-		axi_dma_0: axi_dma@a0000000 {
-			xlnx,dlytmr-resolution = <125>;
-			xlnx,num-s2mm-channels = <1>;
-			xlnx,rable = <0>;
-			xlnx,sg-length-width = <14>;
-			xlnx,ip-name = "axi_dma";
-			reg = <0x0 0xa0000000 0x0 0x10000>;
-			xlnx,sg-use-stsapp-length = <0>;
-			xlnx,s2mm-burst-size = <16>;
-			xlnx,c-dlytmr-resolution = <125>;
-			xlnx,c-num-s2mm-channels = <1>;
-			xlnx,enable-multi-channel = <0>;
-			xlnx,num-mm2s-channels = <1>;
-			xlnx,c-sg-length-width = <14>;
-			compatible = "xlnx,axi-dma-7.1" , "xlnx,axi-dma-1.00.a";
-			xlnx,c-m-axis-mm2s-tdata-width = <256>;
-			xlnx,c-sg-use-stsapp-length = <0>;
-			xlnx,c-s2mm-burst-size = <16>;
-			xlnx,mm2s-burst-size = <2>;
-			xlnx,c-enable-multi-channel = <0>;
-			xlnx,c-num-mm2s-channels = <1>;
-			xlnx,include-s2mm-dre = <0>;
-			xlnx,c-mm2s-burst-size = <2>;
-			status = "okay";
-			xlnx,c-include-s2mm-dre = <0>;
-			xlnx,include-mm2s-dre = <0>;
-			xlnx,name = "axi_dma_0";
-			xlnx,c-include-sg = <0>;
-			xlnx,c-m-axi-s2mm-data-width = <128>;
-			xlnx,include-s2mm-sf = <1>;
-			xlnx,c-include-mm2s-dre = <0>;
-			xlnx,include-s2mm = <1>;
-			clocks = <&zynqmp_clk 71>, <&zynqmp_clk 71>, <&zynqmp_clk 71>;
-			xlnx,addrwidth = <0x31>;
-			xlnx,c-m-axi-mm2s-data-width = <256>;
-			xlnx,edk-iptype = "PERIPHERAL";
-			xlnx,c-include-s2mm-sf = <1>;
-			xlnx,include-mm2s-sf = <1>;
-			clock-names = "m_axi_mm2s_aclk" , "m_axi_s2mm_aclk" , "s_axi_lite_aclk";
-			xlnx,c-include-s2mm = <1>;
-			xlnx,c-addr-width = <49>;
-			xlnx,c-single-interface = <0>;
-			xlnx,include-mm2s = <1>;
-			xlnx,c-s-axis-s2mm-tdata-width = <128>;
-			xlnx,s2mm-data-width = <0x80>;
-			xlnx,c-include-mm2s-sf = <1>;
-			xlnx,prmry-is-aclk-async = <0>;
-			xlnx,c-include-mm2s = <1>;
-			xlnx,increase-throughput = <0>;
-			xlnx,micro-dma = <0>;
-			xlnx,mm2s-data-width = <0x100>;
-			xlnx,c-prmry-is-aclk-async = <0>;
-			xlnx,c-sg-include-stscntrl-strm = <0>;
-			xlnx,c-increase-throughput = <0>;
-			xlnx,c-micro-dma = <0>;
-			dma_channel_a0000000: dma-channel@a0000000 {
-				xlnx,datawidth = <0x100>;
-				xlnx,device-id = <0x0>;
-				compatible = "xlnx,axi-dma-mm2s-channel";
-				dma-channels = <0x1>;
-			};
-			dma_channel_a0000030: dma-channel@a0000030 {
-				xlnx,datawidth = <0x80>;
-				xlnx,device-id = <0x0>;
-				compatible = "xlnx,axi-dma-s2mm-channel";
-				dma-channels = <0x1>;
-			};
+		firmware-name = "blog_example.bit.bin";
+		misc_clk_0: misc_clk_0 {
+			compatible = "fixed-clock";
+			clock-frequency = <250000000>;
+			#clock-cells = <0>;
 		};
-		usp_rf_data_converter_0: usp_rf_data_converter@a0040000 {
+		usp_rf_data_converter_0: usp_rf_data_converter@a0000000 {
 			xlnx,adc-tdd-rts21 = <0>;
 			xlnx,adc3-fabric-freq = <0>;
 			xlnx,adc-dither32;
@@ -88,19 +25,19 @@
 			xlnx,axiclk-freq = <100>;
 			xlnx,adc-nyquist32 = <0>;
 			xlnx,adc-nyquist33 = <0>;
-			reg = <0x0 0xa0040000 0x0 0x40000>;
+			reg = <0x0 0xa0000000 0x0 0x40000>;
 			xlnx,adc-tdd-rts30 = <0>;
 			xlnx,adc2-slices = <2>;
 			xlnx,adc-tdd-rts31 = <0>;
 			xlnx,adc2-fs-max = <5>;
 			xlnx,mdac-fabric-freq = <0>;
-			xlnx,dac0-enable = <1>;
+			xlnx,dac0-enable = <0>;
 			xlnx,adc-tdd-rts32 = <0>;
 			xlnx,sysref-master = <0x0>;
 			xlnx,adc-tdd-rts33 = <0>;
 			xlnx,adc3-link-coupling = <0>;
 			xlnx,adc2-refclk-div = <1>;
-			xlnx,dac-coarse-mixer-freq00 = <3>;
+			xlnx,dac-coarse-mixer-freq00 = <0>;
 			xlnx,dac-coarse-mixer-freq01 = <0>;
 			xlnx,adc0-slices = <2>;
 			xlnx,dac-coarse-mixer-freq02 = <0>;
@@ -137,7 +74,7 @@
 			xlnx,dac2-band = <0>;
 			xlnx,adc-data-width10 = <8>;
 			xlnx,adc-data-width11 = <8>;
-			clock-names = "m0_axis_aclk" , "s0_axis_aclk" , "s_axi_aclk";
+			clock-names = "m0_axis_aclk" , "s_axi_aclk";
 			xlnx,adc3-refclk-div = <1>;
 			xlnx,adc-data-width12 = <8>;
 			xlnx,adc-data-width13 = <8>;
@@ -150,6 +87,7 @@
 			xlnx,madc-fabric-freq = <0>;
 			xlnx,madc-decimation-mode03 = <0>;
 			xlnx,dac-coarse-mixer-freq32 = <0>;
+			xlnx,adc-slice03-enable;
 			xlnx,adc0-enable = <1>;
 			xlnx,dac-coarse-mixer-freq33 = <0>;
 			xlnx,adc-obs-data-width00 = <8>;
@@ -186,13 +124,13 @@
 			xlnx,adc-coarse-mixer-freq01 = <3>;
 			xlnx,adc-data-width31 = <8>;
 			xlnx,adc-obs-data-width13 = <8>;
-			xlnx,adc-coarse-mixer-freq02 = <0>;
+			xlnx,adc-coarse-mixer-freq02 = <3>;
 			xlnx,adc-data-width32 = <8>;
 			xlnx,dac-nyquist00 = <0>;
 			xlnx,dac-mode00 = <0>;
 			xlnx,adc-slice01-enable;
 			xlnx,adc-calopt-mode00 = <1>;
-			xlnx,adc-coarse-mixer-freq03 = <0>;
+			xlnx,adc-coarse-mixer-freq03 = <3>;
 			xlnx,adc-data-width33 = <8>;
 			xlnx,dac-nyquist01 = <0>;
 			xlnx,dac-nco-phase00 = <0>;
@@ -207,7 +145,7 @@
 			xlnx,dac-nyquist03 = <0>;
 			xlnx,dac-nco-phase02 = <0>;
 			xlnx,dac-mode03 = <0>;
-			xlnx,dac0-interpolation = <1>;
+			xlnx,dac0-interpolation = <0>;
 			xlnx,adc11-dig-port = <0>;
 			xlnx,adc-calopt-mode03 = <1>;
 			xlnx,dac-nco-phase03 = <0>;
@@ -239,7 +177,7 @@
 			xlnx,adc-nco-freq03 = <0>;
 			xlnx,adc-calopt-mode10 = <1>;
 			xlnx,adc-coarse-mixer-freq13 = <0>;
-			param-list = [ 00 00 00 00 00 00 04 a0 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 02 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 9a 99 99 99 99 99 19 40 00 00 00 00 00 00 b9 40 00 00 00 00 00 00 79 40 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 1c 40 02 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 9a 99 99 99 99 99 19 40 00 00 00 00 00 00 b9 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 24 40 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 9a 99 99 99 99 99 19 40 00 00 00 00 00 00 b9 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 24 40 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 9a 99 99 99 99 99 19 40 00 00 00 00 00 00 b9 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 24 40 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00 40 9f 40 00 00 00 00 00 40 6f 40 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 14 40 02 00 00 00 01 00 00 00 02 00 00 00 01 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 08 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00 40 9f 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 14 40 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00 40 9f 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 14 40 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00 40 9f 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 14 40 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00];
+			param-list = [ 00 00 00 00 00 00 00 a0 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 02 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 9a 99 99 99 99 99 19 40 00 00 00 00 00 00 b9 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 24 40 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 9a 99 99 99 99 99 19 40 00 00 00 00 00 00 b9 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 24 40 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 9a 99 99 99 99 99 19 40 00 00 00 00 00 00 b9 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 24 40 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 9a 99 99 99 99 99 19 40 00 00 00 00 00 00 b9 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 24 40 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00 40 9f 40 00 00 00 00 00 40 6f 40 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 14 40 02 00 00 00 01 00 00 00 02 00 00 00 01 00 00 00 02 00 00 00 01 00 00 00 02 00 00 00 01 00 00 00 02 00 00 00 00 00 00 00 08 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00 40 9f 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 14 40 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00 40 9f 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 14 40 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00 40 9f 40 00 00 00 00 00 00 00 00 0a 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 14 40 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00];
 			xlnx,mdac-coarse-mixer-freq00 = <0>;
 			xlnx,dac-nyquist11 = <0>;
 			xlnx,dac-nco-phase10 = <0>;
@@ -368,7 +306,7 @@
 			xlnx,madc-nco-phase01 = <0>;
 			xlnx,dac-nco-phase33 = <0>;
 			xlnx,dac-nco-freq01 = <0>;
-			xlnx,dac-mixer-type00 = <1>;
+			xlnx,dac-mixer-type00 = <3>;
 			xlnx,dac-mixer-mode23 = <2>;
 			xlnx,dac-data-type30 = <0>;
 			xlnx,dac1-fbdiv = <10>;
@@ -507,7 +445,7 @@
 			xlnx,adc3-fs-max = <5>;
 			xlnx,dac1-enable = <0>;
 			xlnx,adc-nco-phase30 = <0>;
-			xlnx,dac-interpolation-mode00 = <1>;
+			xlnx,dac-interpolation-mode00 = <0>;
 			xlnx,adc-nco-phase31 = <0>;
 			xlnx,dac-interpolation-mode01 = <0>;
 			xlnx,adc-nco-phase32 = <0>;
@@ -526,8 +464,8 @@
 			xlnx,adc20-dig-port = <0>;
 			xlnx,adc-decimation-mode01 = <1>;
 			xlnx,adc12-dig-port = <0>;
-			xlnx,adc-decimation-mode02 = <0>;
-			xlnx,adc-decimation-mode03 = <0>;
+			xlnx,adc-decimation-mode02 = <1>;
+			xlnx,adc-decimation-mode03 = <1>;
 			xlnx,ip-type = <2>;
 			xlnx,dac-interpolation-mode10 = <0>;
 			xlnx,adc1-clock-source = <1>;
@@ -604,6 +542,7 @@
 			xlnx,dac2-fabric-freq = <0>;
 			xlnx,dac3-clock-source = <7>;
 			xlnx,vnc-include-fs2-change;
+			xlnx,adc-slice02-enable;
 			xlnx,dac-data-width00 = <16>;
 			xlnx,dac0-refclk-div = <1>;
 			xlnx,adc2-clock-dist = <0>;
@@ -657,8 +596,8 @@
 			xlnx,madc-calopt-mode03 = <1>;
 			xlnx,dac1-link-coupling = <0>;
 			xlnx,adc-mixer-type01 = <1>;
-			xlnx,adc-mixer-type02 = <3>;
-			xlnx,adc-mixer-type03 = <3>;
+			xlnx,adc-mixer-type02 = <1>;
+			xlnx,adc-mixer-type03 = <1>;
 			xlnx,dac-data-width20 = <16>;
 			xlnx,adc-obs-decimation-mode10 = <1>;
 			xlnx,dac-decoder-mode20 = <0>;
@@ -715,7 +654,6 @@
 			xlnx,adc-mixer-type23 = <3>;
 			xlnx,tb-adc-fft;
 			xlnx,adc-obs-decimation-mode30 = <1>;
-			xlnx,dac-slice00-enable;
 			xlnx,adc-obs-decimation-mode31 = <1>;
 			xlnx,dac2-slices = <2>;
 			xlnx,adc-obs-decimation-mode32 = <1>;
@@ -736,7 +674,7 @@
 			xlnx,dac1-clock-source = <5>;
 			xlnx,adc0-outdiv = <1>;
 			xlnx,adc-dither03;
-			clocks = <&zynqmp_clk 71>, <&zynqmp_clk 71>, <&zynqmp_clk 71>;
+			clocks = <&misc_clk_0>, <&zynqmp_clk 71>;
 			xlnx,mdac-mixer-mode00 = <2>;
 			xlnx,mdac-mixer-mode01 = <2>;
 			xlnx,adc-nyquist00 = <0>;
@@ -760,7 +698,7 @@
 			xlnx,dac0-slices = <2>;
 			xlnx,adc-tdd-rts01 = <0>;
 			xlnx,adc-dither12;
-			xlnx,dac0-fs-max = <7>;
+			xlnx,dac0-fs-max = <10>;
 			xlnx,adc-tdd-rts02 = <0>;
 			xlnx,adc-dither13;
 			xlnx,adc-tdd-rts03 = <0>;
@@ -768,7 +706,7 @@
 			xlnx,adc-nyquist11 = <0>;
 			xlnx,adc-nyquist12 = <0>;
 			xlnx,adc-nyquist13 = <0>;
-			xlnx,dac0-fabric-freq = <400>;
+			xlnx,dac0-fabric-freq = <0>;
 			xlnx,adc-dither20;
 			xlnx,adc-tdd-rts10 = <0>;
 			xlnx,adc-dither21;
@@ -786,7 +724,7 @@
 			xlnx,dac3-outclk-freq = <50>;
 			xlnx,adc-nyquist21 = <0>;
 			xlnx,adc1-refclk-div = <1>;
-			xlnx,adc02-dig-port = <0>;
+			xlnx,adc02-dig-port = <1>;
 			xlnx,mdac-mixer-type00 = <3>;
 			xlnx,dac2-enable = <0>;
 			xlnx,adc-nyquist22 = <0>;
@@ -797,28 +735,28 @@
 			xlnx,adc-dither30;
 			xlnx,mdac-mixer-type03 = <3>;
 			xlnx,dac0-clock-source-mx = <4>;
-			xlnx,component-name = "mpsoc_preset_usp_rf_data_converter_0_0";
+			xlnx,component-name = "top_design_usp_rf_data_converter_0_0";
 			xlnx,adc-tdd-rts20 = <0>;
 			xlnx,adc0-sampling-rate = <2>;
 			xlnx,adc-dither31;
 			dac@0 {
-				xlnx,fabric-freq = "400.000";
+				xlnx,fabric-freq = "0.0";
 				xlnx,outdiv = <0x1>;
 				xlnx,slices = <0x2>;
 				xlnx,pll-enable = <0x0>;
 				xlnx,sampling-rate = "6.4";
-				xlnx,fs-max = "7.000";
+				xlnx,fs-max = "10.000";
 				xlnx,link-coupling = <0x0>;
 				xlnx,refclk-freq = "6400.000";
 				xlnx,fbdiv = <0xa>;
 				xlnx,band = <0x0>;
-				xlnx,enable = <0x1>;
+				xlnx,enable = <0x0>;
 				xlnx,refclk-div = <0x1>;
 				dac0ap@0 {
 					xlnx,mixer-mode = <0x2>;
 					xlnx,decoder-mode = <0x0>;
 					xlnx,invsinc-ctrl = <0x0>;
-					xlnx,slice-enable = <0x1>;
+					xlnx,slice-enable = <0x0>;
 				};
 				dac0ap@1 {
 					xlnx,mixer-mode = <0x2>;
@@ -839,10 +777,10 @@
 					xlnx,slice-enable = <0x0>;
 				};
 				dac0dp@0 {
-					xlnx,interpolation-mode = <0x1>;
+					xlnx,interpolation-mode = <0x0>;
 					xlnx,nco-freq = "0.0";
 					xlnx,data-width = <0x10>;
-					xlnx,mixer-type = <0x1>;
+					xlnx,mixer-type = <0x3>;
 					xlnx,adder-enable = <0x0>;
 					xlnx,fifo-enable = <0x0>;
 					xlnx,data-type = <0x0>;
@@ -1119,11 +1057,11 @@
 				};
 				adc0ap@2 {
 					xlnx,mixer-mode = <0x2>;
-					xlnx,slice-enable = <0x0>;
+					xlnx,slice-enable = <0x1>;
 				};
 				adc0ap@3 {
 					xlnx,mixer-mode = <0x2>;
-					xlnx,slice-enable = <0x0>;
+					xlnx,slice-enable = <0x1>;
 				};
 				adc0dp@0 {
 					xlnx,nco-freq = "0.0";
@@ -1143,17 +1081,17 @@
 				};
 				adc0dp@2 {
 					xlnx,nco-freq = "0.0";
-					xlnx,decimation-mode = <0x0>;
+					xlnx,decimation-mode = <0x1>;
 					xlnx,data-width = <0x8>;
-					xlnx,mixer-type = <0x3>;
+					xlnx,mixer-type = <0x1>;
 					xlnx,fifo-enable = <0x0>;
 					xlnx,data-type = <0x0>;
 				};
 				adc0dp@3 {
 					xlnx,nco-freq = "0.0";
-					xlnx,decimation-mode = <0x0>;
+					xlnx,decimation-mode = <0x1>;
 					xlnx,data-width = <0x8>;
-					xlnx,mixer-type = <0x3>;
+					xlnx,mixer-type = <0x1>;
 					xlnx,fifo-enable = <0x0>;
 					xlnx,data-type = <0x0>;
 				};
@@ -1354,7 +1292,7 @@
 			status = "okay";
 			compatible = "xlnx,afi-fpga";
 			resets = <&zynqmp_reset 116>, <&zynqmp_reset 117>, <&zynqmp_reset 118>, <&zynqmp_reset 119>;
-			config-afi = < 0 0>, <1 0>, <2 0>, <3 0>, <4 2>, <5 2>, <6 0>, <7 0>, <8 0>, <9 0>, <10 0>, <11 0>, <12 0>, <13 0>, <14 0x800>, <15 0x000>;
+			config-afi = < 0 0>, <1 0>, <2 0>, <3 0>, <4 0>, <5 0>, <6 0>, <7 0>, <8 0>, <9 0>, <10 0>, <11 0>, <12 0>, <13 0>, <14 0xa00>, <15 0x000>;
 		};
 	};
 };

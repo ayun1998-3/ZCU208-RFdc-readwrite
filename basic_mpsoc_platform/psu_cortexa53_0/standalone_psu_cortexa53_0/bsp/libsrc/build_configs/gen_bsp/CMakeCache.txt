@@ -235,8 +235,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Path to a program.
 CMAKE_STRIP:FILEPATH=E:/Vitis/2024.1/gnu/aarch64/nt/aarch64-none/bin/aarch64-none-elf-strip.exe
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/cortexa53_toolchain.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/cortexa53_toolchain.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -281,6 +281,15 @@ XILTIMER_tick_timer:STRING=psu_ttc_2
 YOCTO:BOOL=OFF
 
 //Value Computed by CMake
+axipmon_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/axipmon/src
+
+//Value Computed by CMake
+axipmon_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+axipmon_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/axipmon/src
+
+//Value Computed by CMake
 bsp_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp
 
 //Value Computed by CMake
@@ -288,6 +297,96 @@ bsp_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 bsp_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp
+
+//Value Computed by CMake
+clockps_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/clockps/src
+
+//Value Computed by CMake
+clockps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+clockps_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/clockps/src
+
+//Value Computed by CMake
+common_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/common/src
+
+//Value Computed by CMake
+common_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+common_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/common/src
+
+//Value Computed by CMake
+coresightps_dcc_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/coresightps_dcc/src
+
+//Value Computed by CMake
+coresightps_dcc_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+coresightps_dcc_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/coresightps_dcc/src
+
+//Value Computed by CMake
+csudma_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/csudma/src
+
+//Value Computed by CMake
+csudma_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+csudma_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/csudma/src
+
+//Value Computed by CMake
+ddrcpsu_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/ddrcpsu/src
+
+//Value Computed by CMake
+ddrcpsu_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ddrcpsu_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/ddrcpsu/src
+
+//Value Computed by CMake
+emacps_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/emacps/src
+
+//Value Computed by CMake
+emacps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+emacps_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/emacps/src
+
+//Value Computed by CMake
+gpiops_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/gpiops/src
+
+//Value Computed by CMake
+gpiops_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+gpiops_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/gpiops/src
+
+//Value Computed by CMake
+iicps_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/iicps/src
+
+//Value Computed by CMake
+iicps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+iicps_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/iicps/src
+
+//Value Computed by CMake
+ipipsu_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/ipipsu/src
+
+//Value Computed by CMake
+ipipsu_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ipipsu_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/ipipsu/src
+
+//Value Computed by CMake
+libxil_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc
+
+//Value Computed by CMake
+libxil_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+libxil_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc
 
 //Archiver
 proc_archiver:STRING=aarch64-none-elf-gcc-ar.exe
@@ -303,6 +402,51 @@ proc_compiler_flags:STRING= -O2 -DSDT;-c
 
 //Extra Compiler Flags
 proc_extra_compiler_flags:STRING= -g -Wall -Wextra -fno-tree-loop-distribute-patterns
+
+//Value Computed by CMake
+qspipsu_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/qspipsu/src
+
+//Value Computed by CMake
+qspipsu_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+qspipsu_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/qspipsu/src
+
+//Value Computed by CMake
+resetps_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/resetps/src
+
+//Value Computed by CMake
+resetps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+resetps_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/resetps/src
+
+//Value Computed by CMake
+rtcpsu_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/rtcpsu/src
+
+//Value Computed by CMake
+rtcpsu_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+rtcpsu_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/rtcpsu/src
+
+//Value Computed by CMake
+scugic_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/scugic/src
+
+//Value Computed by CMake
+scugic_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+scugic_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/scugic/src
+
+//Value Computed by CMake
+sdps_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/sdps/src
+
+//Value Computed by CMake
+sdps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+sdps_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/sdps/src
 
 //This option is not supported in the Unified Vitis IDE in this
 // version. Change to the classic IDE if you want to use this option.
@@ -345,6 +489,51 @@ standalone_xpm_support:STRING=None
 standalone_zynqmp_fsbl_bsp:STRING=None
 
 //Value Computed by CMake
+sysmonpsu_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/sysmonpsu/src
+
+//Value Computed by CMake
+sysmonpsu_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+sysmonpsu_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/sysmonpsu/src
+
+//Value Computed by CMake
+ttcps_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/ttcps/src
+
+//Value Computed by CMake
+ttcps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ttcps_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/ttcps/src
+
+//Value Computed by CMake
+uartps_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/uartps/src
+
+//Value Computed by CMake
+uartps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+uartps_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/uartps/src
+
+//Value Computed by CMake
+usbpsu_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/usbpsu/src
+
+//Value Computed by CMake
+usbpsu_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+usbpsu_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/usbpsu/src
+
+//Value Computed by CMake
+wdtps_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/wdtps/src
+
+//Value Computed by CMake
+wdtps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+wdtps_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/wdtps/src
+
+//Value Computed by CMake
 xilstandalone_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src
 
 //Value Computed by CMake
@@ -361,6 +550,15 @@ xiltimer_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 xiltimer_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/xiltimer/src
+
+//Value Computed by CMake
+zdma_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/build_configs/gen_bsp/libsrc/zdma/src
+
+//Value Computed by CMake
+zdma_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+zdma_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/basic_mpsoc_platform/psu_cortexa53_0/standalone_psu_cortexa53_0/bsp/libsrc/zdma/src
 
 
 ########################
@@ -472,7 +670,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=21
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=43
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

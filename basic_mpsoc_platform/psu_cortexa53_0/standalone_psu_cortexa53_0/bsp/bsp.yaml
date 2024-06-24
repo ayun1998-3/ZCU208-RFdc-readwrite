@@ -1,7 +1,7 @@
 sdt: hw_artifacts\psu_cortexa53_0_baremetal.dts
 family: ZynqMP
 path: C:\Users\IECS-Lab\Desktop\vitis_2024_workspace\basic_mpsoc_platform\psu_cortexa53_0\standalone_psu_cortexa53_0\bsp
-config: default
+config: None
 os: standalone
 os_info:
   standalone:

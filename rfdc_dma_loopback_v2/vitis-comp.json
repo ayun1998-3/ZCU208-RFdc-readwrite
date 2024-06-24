@@ -1,0 +1,15 @@
+{
+  "name": "rfdc_dma_loopback_v2",
+  "type": "HOST",
+  "platform": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rfdc_dma_v3\\export\\rfdc_dma_v3\\rfdc_dma_v3.xpfm",
+  "domain": "standalone_psu_cortexa53_0",
+  "cpuInstance": "psu_cortexa53_0",
+  "cpuType": "cortex-a53",
+  "os": "standalone",
+  "configuration": {
+    "componentType": "HOST",
+    "hostToolchainConfigurations": []
+  },
+  "domainRealName": "standalone_psu_cortexa53_0",
+  "applicationFlow": "EMBEDDED"
+}

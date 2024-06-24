@@ -4,7 +4,12 @@
 		compatible = "simple-bus";
 		#address-cells = <2>;
 		#size-cells = <2>;
-		firmware-name = "dma_template.bit.bin";
+		firmware-name = "disconnect_v3.bit.bin";
+		misc_clk_0: misc_clk_0 {
+			compatible = "fixed-clock";
+			clock-frequency = <199998000>;
+			#clock-cells = <0>;
+		};
 		axi_dma_0: axi_dma@a0000000 {
 			xlnx,dlytmr-resolution = <125>;
 			xlnx,num-s2mm-channels = <1>;
@@ -37,7 +42,7 @@
 			xlnx,include-s2mm-sf = <1>;
 			xlnx,c-include-mm2s-dre = <0>;
 			xlnx,include-s2mm = <1>;
-			clocks = <&zynqmp_clk 71>, <&zynqmp_clk 71>, <&zynqmp_clk 71>;
+			clocks = <&misc_clk_0>, <&misc_clk_0>, <&misc_clk_0>;
 			xlnx,addrwidth = <0x31>;
 			xlnx,c-m-axi-mm2s-data-width = <32>;
 			xlnx,edk-iptype = "PERIPHERAL";

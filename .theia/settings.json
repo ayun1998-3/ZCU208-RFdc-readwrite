@@ -1,0 +1,4 @@
+{
+    "clangd.fallbackFlags": [],
+    "git.ignoreLimitWarning": true
+}

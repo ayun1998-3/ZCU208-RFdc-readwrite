@@ -760,6 +760,9 @@
 		xlnx,use-msr-instr = <1>;
 		xlnx,icache-data-width = <0>;
 	};
+	&fclk0 {
+		status = "okay";
+	};
 	&coresight_0 {
 		xlnx,rable = <0>;
 		status = "okay";

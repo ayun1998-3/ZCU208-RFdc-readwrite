@@ -1,0 +1,15 @@
+{
+  "name": "rfdc_selftest",
+  "type": "HOST",
+  "platform": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rf_rw_platform\\export\\rf_rw_platform\\rf_rw_platform.xpfm",
+  "domain": "standalone_psu_cortexa53_0",
+  "cpuInstance": "psu_cortexa53_0",
+  "cpuType": "cortex-a53",
+  "os": "standalone",
+  "configuration": {
+    "componentType": "HOST",
+    "hostToolchainConfigurations": []
+  },
+  "domainRealName": "standalone_psu_cortexa53_0",
+  "applicationFlow": "EMBEDDED"
+}

@@ -3,6 +3,7 @@
 #include "xparameters.h"
 #include "xdebug.h"
 #include "sleep.h"
+#include <stdint.h>
 #include <xil_types.h>
 
 
@@ -44,7 +45,7 @@ DEFAULT SET TO 0x01000000
 #define RX_BUFFER_BASE		(MEM_BASE_ADDR + 0x00300000)
 #define RX_BUFFER_HIGH		(MEM_BASE_ADDR + 0x004FFFFF)
 
-#define MAX_PKT_LEN		0x20
+#define MAX_PKT_LEN		0x80
 
 #define TEST_START_VALUE	0x100  //Orignally 0xC
 
@@ -53,6 +54,10 @@ DEFAULT SET TO 0x01000000
 
 /**************************** Type Definitions *******************************/
 
+// 128-bit word represented as 8 x 16 bit words
+typedef struct {
+    u16 word[8];
+} data128;
 
 /***************** Macros (Inline Functions) Definitions *********************/
 
@@ -63,7 +68,7 @@ DEFAULT SET TO 0x01000000
 extern void xil_printf(const char *format, ...);
 #endif
 
-#ifndef SDT // SDT is System Device Tree? (doesn't seem to be defined in xparameters.h)
+#ifndef SDT // SDT is System Device Tree
 int simple_read_write(u16 DeviceId);
 #else
 int simple_read_write(UINTPTR BaseAddress);
@@ -122,13 +127,16 @@ int simple_read_write(UINTPTR BaseAddress)
 	int Status;
 	int Tries = NUMBER_OF_TRANSFERS;
 	int Index;
-	u32 *TxBufferPtr;
-	u32 *RxBufferPtr;
-	u32 Value;
+	data128 *TxBufferPtr;
+	data128 *RxBufferPtr;
+	u16 Value;
 	int TimeOut = POLL_TIMEOUT_COUNTER;
 
-	TxBufferPtr = (u32 *)TX_BUFFER_BASE ;
-	RxBufferPtr = (u32 *)RX_BUFFER_BASE;
+	TxBufferPtr = (data128 *)TX_BUFFER_BASE ;
+	RxBufferPtr = (data128 *)RX_BUFFER_BASE;
+
+    // Code for testing RF data converter settings
+    int result = testRfdcConfig();
 
 	/* Initialize the XAxiDma device.
 	 */
@@ -164,15 +172,15 @@ int simple_read_write(UINTPTR BaseAddress)
 	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
 			    XAXIDMA_DMA_TO_DEVICE);
 
-	Value = TEST_START_VALUE;
+	//Value = TEST_START_VALUE;
 
 
     // populate Tx buffer with dummy values
-	for (Index = 0; Index < MAX_PKT_LEN; Index ++) {
-		TxBufferPtr[Index] = Value;
+	// for (Index = 0; Index < MAX_PKT_LEN; Index ++) {
+	// 	TxBufferPtr[Index] = Value;
 
-		// Value = (Value + 1) & 0xFF;
-	}
+	// 	// Value = (Value + 1) & 0xFF;
+	// }
 
 	/* Flush the buffers before the DMA transfer, in case the Data Cache
 	 * is enabled
@@ -181,19 +189,18 @@ int simple_read_write(UINTPTR BaseAddress)
 	Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
 
 	for (Index = 0; Index < Tries; Index ++) {
-        xil_printf("Iteration, %d\r\n", Index);
+        // read from ADC
 
 		Status = XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR) RxBufferPtr,
 						MAX_PKT_LEN, XAXIDMA_DEVICE_TO_DMA);
-
-        xil_printf("Check 1\r\n");
-
 
 		if (Status != XST_SUCCESS) {
 			return XST_FAILURE;
 		}
 
-        xil_printf("Check 2\r\n");
+        xil_printf("Check %d\r\n", Index);
+
+        // write to DAC
 
 
 		Status = XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR) TxBufferPtr,
@@ -205,13 +212,25 @@ int simple_read_write(UINTPTR BaseAddress)
 
 		/*Wait till tranfer is done or 1usec * 10^6 iterations of timeout occurs*/
 		while (TimeOut) {
-			if (!(XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) &&
-			    !(XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE))) {
+			// if (!(XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) &&
+			//     !(XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE))) {
+			// 	break;
+			// }
+            if (!XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) {
 				break;
 			}
 			TimeOut--;
 			usleep(1U);
 		}
+
+        // print data received from ADC
+        xil_printf("First 10 values of received data:");
+        for (int i = 0; i < 10; i ++) {
+            for (int j = 0; j < 8; j++) {
+                xil_printf("%x, ", RxBufferPtr[i].word[j]);                   
+            }
+        }
+
 
 		Status = checkData();
 		if (Status != XST_SUCCESS) {
@@ -243,32 +262,36 @@ int simple_read_write(UINTPTR BaseAddress)
 ******************************************************************************/
 static int checkData(void)
 {
-	u32 *RxPacket;
-	int Index = 0;
-	u32 Value;
+	// u32 *RxPacket;
+	// int Index = 0;
+	// u32 Value;
 
-	RxPacket = (u32 *) RX_BUFFER_BASE;
-	Value = TEST_START_VALUE;
+	// RxPacket = (u32 *) RX_BUFFER_BASE;
+	// Value = TEST_START_VALUE;
 
-	/* Invalidate the DestBuffer before receiving the data, in case the
-	 * Data Cache is enabled
-	 */
-	Xil_DCacheInvalidateRange((UINTPTR)RxPacket, MAX_PKT_LEN);
+	// /* Invalidate the DestBuffer before receiving the data, in case the
+	//  * Data Cache is enabled
+	//  */
+	// Xil_DCacheInvalidateRange((UINTPTR)RxPacket, MAX_PKT_LEN);
 
-	for (Index = 0; Index < MAX_PKT_LEN; Index++) {
-        //xil_printf("Received :%d. \r\n", RxPacket[Index]);
-		if (RxPacket[Index] != Value) {
-			xil_printf("Data error %d: sent %x, received %x\r\n",
-				   Index, (unsigned int)Value,
-				   (unsigned int)RxPacket[Index]);
+	// for (Index = 0; Index < MAX_PKT_LEN; Index++) {
+    //     xil_printf("Received :%d. \r\n", RxPacket[Index]);
+	// 	if (RxPacket[Index] != Value) {
+	// 		xil_printf("Data error %d: sent %x, received %x\r\n",
+	// 			   Index, (unsigned int)Value,
+	// 			   (unsigned int)RxPacket[Index]);
             
-            xil_printf("Data error %d: sent %d, received %d\r\n",
-				   Index, (unsigned int)Value,
-				   (unsigned int)RxPacket[Index]);
-			//return XST_FAILURE;
-		}
-		// Value = (Value + 1) & 0xFF;
-	}
+    //         xil_printf("Data error %d: sent %d, received %d\r\n",
+	// 			   Index, (unsigned int)Value,
+	// 			   (unsigned int)RxPacket[Index]);
+	// 		//return XST_FAILURE;
+	// 	}
+	// 	Value = (Value + 1) & 0xFF;
+	// }
 
 	return XST_SUCCESS;
+}
+
+int testRfdcConfig() {
+        
 }

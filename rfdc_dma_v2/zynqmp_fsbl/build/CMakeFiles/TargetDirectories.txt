@@ -1,0 +1,3 @@
+C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/rfdc_dma_v2/zynqmp_fsbl/build/CMakeFiles/fsbl.elf.dir
+C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/rfdc_dma_v2/zynqmp_fsbl/build/CMakeFiles/edit_cache.dir
+C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/rfdc_dma_v2/zynqmp_fsbl/build/CMakeFiles/rebuild_cache.dir

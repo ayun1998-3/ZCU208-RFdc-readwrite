@@ -3,8 +3,8 @@
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "C:\\Users\\IECS-Lab\\Desktop\\example_projects\\rfdc_data_rw\\rfdata_rw_hardware.xsa",
-    "xsaPathInPlatform": "rf_rw_platform\\hw\\rfdata_rw_hardware.xsa",
+    "xsa": "C:\\Users\\IECS-Lab\\Desktop\\example_projects\\rfdc_rw_v2\\rf_adconly.xsa",
+    "xsaPathInPlatform": "rf_rw_platform\\hw\\rf_adconly.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",
     "isCustomFSBL": false,

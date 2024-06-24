@@ -1,0 +1,71 @@
+{
+  "name": "rfdc_dma_v2",
+  "type": "PLATFORM",
+  "configuration": {
+    "description": "",
+    "xsa": "C:\\Users\\IECS-Lab\\Desktop\\example_projects\\rfdc_dma\\rfdc_dma\\rfdc_dma_hardware.xsa",
+    "xsaPathInPlatform": "rfdc_dma_v2\\hw\\rfdc_dma_hardware.xsa",
+    "emulationXsa": "",
+    "emulationXsaPathInPlatform": "",
+    "isCustomFSBL": false,
+    "fsblPath": "",
+    "pmufwElf": "",
+    "flow": "EMBEDDED",
+    "processorsMap": {
+      "psu_cortexa53_0": "psu_cortexa53",
+      "psu_cortexa53_1": "psu_cortexa53",
+      "psu_cortexa53_2": "psu_cortexa53",
+      "psu_cortexa53_3": "psu_cortexa53",
+      "psu_cortexr5_0": "psu_cortexr5",
+      "psu_cortexr5_1": "psu_cortexr5",
+      "psu_pmu_0": "psu_pmu"
+    },
+    "supportedFamily": "zynquplus",
+    "componentType": "PLATFORM",
+    "domains": [
+      {
+        "name": "zynqmp_fsbl",
+        "displayName": "zynqmp_fsbl",
+        "processor": "psu_cortexa53_0",
+        "cpuType": "cortex-a53",
+        "cpuInstance": "psu_cortexa53_0",
+        "os": "standalone",
+        "appTemplate": "zynqmp_fsbl",
+        "isBootDomain": true,
+        "qemuData": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rfdc_dma_v2\\resources\\zynqmp_fsbl\\qemu",
+        "qemuArgsFile": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rfdc_dma_v2\\resources\\zynqmp_fsbl\\qemu\\qemu_args.txt",
+        "pmcQemuArgsFile": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rfdc_dma_v2\\resources\\zynqmp_fsbl\\qemu\\pmu_args.txt",
+        "isBSPGenReq": false
+      },
+      {
+        "name": "zynqmp_pmufw",
+        "displayName": "zynqmp_pmufw",
+        "processor": "psu_pmu_0",
+        "cpuType": "psu_pmu",
+        "cpuInstance": "psu_pmu_0",
+        "os": "standalone",
+        "appTemplate": "zynqmp_pmufw",
+        "isBootDomain": true,
+        "qemuData": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rfdc_dma_v2\\resources\\zynqmp_pmufw\\qemu",
+        "qemuArgsFile": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rfdc_dma_v2\\resources\\zynqmp_pmufw\\qemu\\qemu_args.txt",
+        "pmcQemuArgsFile": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rfdc_dma_v2\\resources\\zynqmp_pmufw\\qemu\\pmu_args.txt",
+        "isBSPGenReq": false
+      },
+      {
+        "name": "standalone_psu_cortexa53_0",
+        "displayName": "standalone_psu_cortexa53_0",
+        "processor": "psu_cortexa53_0",
+        "cpuType": "cortex-a53",
+        "cpuInstance": "psu_cortexa53_0",
+        "os": "standalone",
+        "appTemplate": "empty_application",
+        "isBootDomain": false,
+        "qemuData": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rfdc_dma_v2\\resources\\standalone_psu_cortexa53_0\\qemu",
+        "qemuArgsFile": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rfdc_dma_v2\\resources\\standalone_psu_cortexa53_0\\qemu\\qemu_args.txt",
+        "pmcQemuArgsFile": "C:\\Users\\IECS-Lab\\Desktop\\vitis_2024_workspace\\rfdc_dma_v2\\resources\\standalone_psu_cortexa53_0\\qemu\\pmu_args.txt",
+        "isBSPGenReq": false
+      }
+    ],
+    "emptyToolchainConfiguration": []
+  }
+}

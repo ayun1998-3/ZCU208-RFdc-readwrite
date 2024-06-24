@@ -3,8 +3,8 @@
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "C:\\Users\\IECS-Lab\\Desktop\\example_projects\\basic_template_2024\\dma_template.xsa",
-    "xsaPathInPlatform": "dma_loopback\\hw\\dma_template.xsa",
+    "xsa": "C:\\Users\\IECS-Lab\\Desktop\\example_projects\\dma_design_template\\disconnect_v3.xsa",
+    "xsaPathInPlatform": "dma_loopback\\hw\\disconnect_v3.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",
     "isCustomFSBL": false,

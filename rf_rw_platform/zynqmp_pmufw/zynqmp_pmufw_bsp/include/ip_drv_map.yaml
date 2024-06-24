@@ -1,6 +1,3 @@
-axi_dma_0:
-- axi_dma
-- axidma
 psu_adma_0:
 - psu_adma
 - zdma

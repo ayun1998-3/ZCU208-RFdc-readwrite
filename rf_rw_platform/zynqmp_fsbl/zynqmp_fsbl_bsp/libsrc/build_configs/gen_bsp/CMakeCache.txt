@@ -317,7 +317,7 @@ XILFFS_ramfs_start_addr:STRING=
 
 //Enables the file system in Read_Only mode if true. ZynqMP fsbl
 // will set this to true
-XILFFS_read_only:BOOL=ON
+XILFFS_read_only:BOOL=True
 
 //Configures relative path feature (valid values 0 to 2).
 XILFFS_set_fs_rpath:STRING=0
@@ -333,7 +333,7 @@ XILFFS_use_lfn:STRING=0
 
 //Disable(0) or Enable(1) f_mkfs function. ZynqMP fsbl will set
 // this to false
-XILFFS_use_mkfs:BOOL=OFF
+XILFFS_use_mkfs:BOOL=False
 
 //Enables the string functions (valid values 0 to 2).
 XILFFS_use_strfunc:STRING=0
@@ -398,7 +398,7 @@ XILSECURE_secure_environment:BOOL=OFF
 //Enables decryption of bitstream to memory and then writes it
 // to PCAP, allows calculation of sha on decrypted bitstream in
 // chunks valid only for ZynqMP FSBL BSP
-XILSECURE_tpm_support:BOOL=ON
+XILSECURE_tpm_support:BOOL=True
 
 //Enable Interval Timer
 XILTIMER_en_interval_timer:BOOL=OFF
@@ -411,15 +411,6 @@ XILTIMER_tick_timer:STRING=None
 
 //Yocto based embeddedsw FLOW
 YOCTO:BOOL=OFF
-
-//Value Computed by CMake
-axidma_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/rf_rw_platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/axidma/src
-
-//Value Computed by CMake
-axidma_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-axidma_SOURCE_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/rf_rw_platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/axidma/src
 
 //Value Computed by CMake
 axipmon_BINARY_DIR:STATIC=C:/Users/IECS-Lab/Desktop/vitis_2024_workspace/rf_rw_platform/zynqmp_fsbl/zynqmp_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/axipmon/src
@@ -856,7 +847,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=64
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=63
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

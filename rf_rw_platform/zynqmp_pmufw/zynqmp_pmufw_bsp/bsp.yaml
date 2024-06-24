@@ -168,10 +168,6 @@ include_folder: include
 lib_folder: lib
 libsrc_folder: libsrc
 drv_info:
-  axi_dma_0:
-    driver: axidma
-    ip_name: axi_dma
-    path: E:\Vitis\2024.1\data\embeddedsw\XilinxProcessorIPLib\drivers\axidma_v9_18
   psu_adma_0:
     driver: zdma
     ip_name: psu_adma
